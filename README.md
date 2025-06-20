@@ -1,23 +1,37 @@
-Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif)My name is Shafkat
-===============================================================================================================================
+# Shafkat Rahman - AI Engineer & Data Scientist
 
-Data Engineer
--------------
+[![Website](https://img.shields.io/badge/Website-sakeeb91.github.io-blue?style=for-the-badge&logo=github)](https://sakeeb91.github.io/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-shafkat--rahman-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/shafkat-rahman/)
 
-As a private equity research analyst, I spent 2 years working on various financial projects, analyzing data and conducting research to inform investment decisions. While I enjoyed this role and gained valuable skills in financial analysis and data interpretation, I realized that I wanted to explore a different career path that allowed me to focus on my strengths in creative problem-solving and data analysis. After researching different roles in the tech industry, I discovered the field of data engineering and saw that it aligned perfectly with my skills and interests. I began learning about data engineering concepts and technologies, such as SQL, Python, and ETL pipelines and was drawn to this role's challenging and rewarding nature. I am now transitioning into a career as a data engineer, using my skills in research and numerical analysis to design and build scalable data systems and pipelines. I am excited to apply my problem-solving skills to new challenges in this field and to continue learning and growing in my career.
+**AI Engineer specializing in Healthcare AI, Quantum Computing, and Ethical Machine Learning**
 
-* 🌍  I'm based in Montréal
-* 🧠  I'm learning quantum algorithm design for financial systems
-* 🤝  I'm open to collaborating on quantum computing, computational physics, physics inspired neural networks
+🌍 Based in Montréal  
+🧠 Learning quantum algorithms for financial systems  
+🤝 Open to collaborating on quantum computing and healthcare AI projects  
 
-### Skills
+## Featured Work
 
+### 🏥 [GRPO Healthcare AI](https://sakeeb91.github.io/reinforcement-learning-grpo/)
+Group Robust Policy Optimization for ethical medical resource allocation
+- **25% fairness improvement** with statistical significance
+- **$3.5M annual value** through bias mitigation
+- **Production-ready** healthcare AI system
 
-<p align="left">
-<a href="https://www.python.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /> <img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="arduino" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://cloud.google.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="40" height="40"/> </a> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="40" height="40"/> </a> <a href="https://www.sqlite.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/></a>
-</p>
+## Technical Expertise
 
+- **Machine Learning**: PyTorch, TensorFlow, Reinforcement Learning, Ethical AI
+- **Data Engineering**: Python, SQL, ETL Pipelines, Big Data
+- **Cloud & DevOps**: Google Cloud, Docker, MLOps, CI/CD
+- **Quantum Computing**: Quantum algorithms, Qiskit, Financial applications
 
-### Socials
+## Connect With Me
 
-<p align="left"> <a href="https://www.github.com/Sakeeb91" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" /></a> <a href="https://hashnode.com/@Sakeeb.hashnode.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/hashnode.svg" width="32" height="32" /></a> <a href="https://www.linkedin.com/in/shafkat-rahman/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" width="32" height="32" /></a> <a href="http://www.medium.com/@sakeebrahman" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/medium.svg" width="32" height="32" /></a> <a href="https://www.twitter.com/Sakeeb91" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/twitter.svg" width="32" height="32" /></a></p>
+- 💼 [LinkedIn](https://linkedin.com/in/shafkat-rahman/)
+- 💻 [GitHub](https://github.com/Sakeeb91)
+- 📝 [Medium](https://medium.com/@sakeebrahman)
+- 🐦 [Twitter](https://twitter.com/Sakeeb91)
+- 📰 [Hashnode](https://hashnode.com/@Sakeeb.hashnode.dev)
+
+---
+
+*Building ethical AI solutions for healthcare and quantum computing applications.*

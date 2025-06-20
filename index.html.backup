@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shafkat's Portfolio</title>
+</head>
+<body>
+    <h1>Hi 👋, My name is Shafkat</h1>
+    <h2>Data Engineer</h2>
+    <p>I'm based in Montréal and learning quantum algorithm design for financial systems.</p>
+    <p>Welcome to My Portfolio!</p>
+    <h3>Skills</h3>
+    <p>Python, SQL, ETL, Docker, Quantum Computing, etc.</p>
+</body>
+</html>
