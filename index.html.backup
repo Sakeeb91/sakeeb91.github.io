@@ -258,6 +258,27 @@
             color: var(--text-primary);
         }
 
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
         .project-showcase {
             background: var(--bg-card);
             border-radius: 1rem;
@@ -443,6 +464,14 @@
                 grid-template-columns: 1fr;
             }
 
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                padding: 2rem;
+            }
+
             .container {
                 padding: 0 1rem;
             }
@@ -531,27 +560,27 @@
         </div>
     </section>
 
-    <!-- Featured Project -->
+    <!-- Projects Section -->
     <section class="featured-project" id="projects">
         <div class="container">
-            <h2 class="section-title fade-in-up">Featured Project</h2>
-            <div class="project-showcase fade-in-up">
-                <div class="project-header">
-                    <div>
-                        <h3 class="project-title">🏥 GRPO Healthcare AI</h3>
-                        <p class="project-subtitle">Group Robust Policy Optimization for Ethical Medical Resource Allocation</p>
-                        <div class="project-badges">
-                            <span class="badge success">25% Fairness Improvement</span>
-                            <span class="badge">Statistical Significance</span>
-                            <span class="badge accent">$3.5M Annual Value</span>
-                            <span class="badge warning">Production Ready</span>
-                        </div>
-                        <p style="margin-top: 1rem; color: var(--text-secondary);">
-                            Novel reinforcement learning algorithm that extends PPO with explicit fairness constraints, 
-                            achieving statistically significant improvements in demographic equity while maintaining 
-                            operational efficiency across multiple hospital scenarios.
-                        </p>
+            <h2 class="section-title fade-in-up">Featured Projects</h2>
+            <div class="projects-grid fade-in-up">
+                
+                <!-- GRPO Healthcare AI Project -->
+                <div class="project-card">
+                    <h3 class="project-title">🏥 GRPO Healthcare AI</h3>
+                    <p class="project-subtitle">Group Robust Policy Optimization for Ethical Medical Resource Allocation</p>
+                    <div class="project-badges">
+                        <span class="badge success">25% Fairness Improvement</span>
+                        <span class="badge">Statistical Significance</span>
+                        <span class="badge accent">$3.5M Annual Value</span>
+                        <span class="badge warning">Production Ready</span>
                     </div>
+                    <p style="margin: 1.5rem 0; color: var(--text-secondary); line-height: 1.6;">
+                        Novel reinforcement learning algorithm extending PPO with explicit fairness constraints. 
+                        Achieved statistically significant improvements in demographic equity while maintaining 
+                        operational efficiency across multiple hospital scenarios.
+                    </p>
                     <div class="project-stats">
                         <div class="stat-item">
                             <div class="stat-number">25.3%</div>
@@ -570,15 +599,59 @@
                             <div class="stat-label">Experiments</div>
                         </div>
                     </div>
+                    <div style="margin-top: 2rem;">
+                        <a href="https://sakeeb91.github.io/reinforcement-learning-grpo/" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
+                        <a href="https://github.com/Sakeeb91/reinforcement-learning-grpo" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
                 </div>
-                <div style="margin-top: 2rem;">
-                    <a href="https://sakeeb91.github.io/reinforcement-learning-grpo/" class="btn btn-primary" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> View Project
-                    </a>
-                    <a href="https://github.com/Sakeeb91/reinforcement-learning-grpo" class="btn btn-secondary" target="_blank">
-                        <i class="fab fa-github"></i> Source Code
-                    </a>
+
+                <!-- Chaotic Systems Analysis Project -->
+                <div class="project-card">
+                    <h3 class="project-title">🌀 Chaotic Systems Analysis</h3>
+                    <p class="project-subtitle">Advanced Mathematical Toolkit for Nonlinear Dynamical Systems</p>
+                    <div class="project-badges">
+                        <span class="badge">Time-Delay Embedding</span>
+                        <span class="badge accent">Fractal Analysis</span>
+                        <span class="badge success">Scientific Computing</span>
+                        <span class="badge warning">Research Toolkit</span>
+                    </div>
+                    <p style="margin: 1.5rem 0; color: var(--text-secondary); line-height: 1.6;">
+                        Comprehensive Python framework for analyzing chaotic dynamical systems using advanced 
+                        mathematical techniques. Features automated parameter optimization, fractal dimension 
+                        estimation, and publication-quality scientific visualizations.
+                    </p>
+                    <div class="project-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">Rössler</div>
+                            <div class="stat-label">System Focus</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3D</div>
+                            <div class="stat-label">Attractor Analysis</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">Auto</div>
+                            <div class="stat-label">Parameter Tuning</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Test Coverage</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <a href="https://github.com/Sakeeb91/chaotic-systems-analysis" class="btn btn-primary" target="_blank">
+                            <i class="fab fa-github"></i> View Repository
+                        </a>
+                        <a href="https://github.com/Sakeeb91/chaotic-systems-analysis#features" class="btn btn-secondary" target="_blank">
+                            <i class="fas fa-code"></i> Documentation
+                        </a>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -631,6 +704,17 @@
                         <span class="skill-tag">Financial Applications</span>
                         <span class="skill-tag">Quantum ML</span>
                         <span class="skill-tag">Circuit Design</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-wave-square"></i> Computational Physics</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Chaotic Systems</span>
+                        <span class="skill-tag">Nonlinear Dynamics</span>
+                        <span class="skill-tag">Fractal Analysis</span>
+                        <span class="skill-tag">Time-Series Analysis</span>
+                        <span class="skill-tag">Mathematical Modeling</span>
+                        <span class="skill-tag">Scientific Computing</span>
                     </div>
                 </div>
             </div>
