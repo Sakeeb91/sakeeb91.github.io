@@ -21,35 +21,7 @@
     <meta property="twitter:description" content="AI Engineer specializing in healthcare AI, quantum computing, and ethical machine learning">
     <meta property="twitter:image" content="https://sakeeb91.github.io/assets/preview.png">
 
-    <!-- Fonts and Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #059669;
-            --success-color: #10b981;
-            --warning-color: #f59e0b;
-            --error-color: #ef4444;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --text-light: #9ca3af;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-dark: #0f172a;
-            --bg-card: #ffffff;
-            --border-color: #e2e8f0;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -57,470 +29,217 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Courier New', monospace;
             line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-primary);
-            overflow-x: hidden;
+            color: #000;
+            background-color: #fff;
+            font-size: 14px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 20px;
         }
 
         /* Navigation */
         .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            transition: all 0.3s ease;
+            background: #fff;
+            border-bottom: 1px solid #000;
+            padding: 20px 0;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
         .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
+            font-weight: bold;
+            color: #000;
             text-decoration: none;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 30px;
         }
 
         .nav-links a {
-            color: var(--text-primary);
+            color: #000;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
+            text-decoration: underline;
         }
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-            position: relative;
-            overflow: hidden;
+            padding: 80px 0;
+            text-align: center;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.5;
+        .hero h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+        .subtitle {
+            font-size: 16px;
+            margin-bottom: 30px;
         }
 
-        .hero-text h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-text .subtitle {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            font-weight: 400;
-        }
-
-        .hero-text .description {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            line-height: 1.7;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+        .description {
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn {
-            padding: 0.75rem 2rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #000;
+            color: #000;
             text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
+            margin: 0 10px;
+            text-transform: uppercase;
+            font-weight: bold;
         }
 
-        .btn-primary {
-            background: var(--primary-color);
-            color: white;
-            box-shadow: var(--shadow);
+        .btn:hover {
+            background: #000;
+            color: #fff;
         }
 
-        .btn-primary:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .hero-image {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-card {
-            background: var(--bg-card);
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: var(--shadow-xl);
-            border: 1px solid var(--border-color);
-            max-width: 400px;
-            text-align: center;
-        }
-
-        .profile-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: var(--gradient-1);
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-        }
-
-        /* Featured Project */
-        .featured-project {
-            padding: 6rem 0;
-            background: var(--bg-secondary);
+        /* Projects Section */
+        .projects {
+            padding: 80px 0;
+            border-top: 1px solid #000;
         }
 
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: bold;
             text-align: center;
-            margin-bottom: 3rem;
-            color: var(--text-primary);
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        .project {
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #ccc;
         }
 
-        .project-card {
-            background: var(--bg-card);
-            border-radius: 1rem;
-            padding: 2.5rem;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .project-showcase {
-            background: var(--bg-card);
-            border-radius: 1rem;
-            padding: 3rem;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-        }
-
-        .project-header {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 2rem;
-            align-items: start;
-            margin-bottom: 2rem;
+        .project:last-child {
+            border-bottom: none;
         }
 
         .project-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
         .project-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
+            margin-bottom: 20px;
+            font-style: italic;
         }
 
-        .project-badges {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
+        .project-description {
+            margin-bottom: 30px;
         }
 
-        .badge {
-            background: var(--primary-color);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            font-size: 0.85rem;
-            font-weight: 500;
+        .project-links {
+            margin-top: 20px;
         }
 
-        .badge.success { background: var(--success-color); }
-        .badge.warning { background: var(--warning-color); }
-        .badge.accent { background: var(--accent-color); }
-
-        .project-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 1rem;
-            background: var(--bg-secondary);
-            border-radius: 0.5rem;
-        }
-
-        .stat-number {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
+        .project-links a {
+            color: #000;
+            text-decoration: underline;
+            margin-right: 20px;
         }
 
         /* Skills Section */
         .skills {
-            padding: 6rem 0;
+            padding: 80px 0;
+            border-top: 1px solid #000;
         }
 
-        .skills-grid {
+        .skills-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .skill-category {
-            background: var(--bg-card);
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
         }
 
         .skill-category h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
         }
 
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+        .skill-category ul {
+            list-style: none;
         }
 
-        .skill-tag {
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            font-size: 0.9rem;
-            border: 1px solid var(--border-color);
+        .skill-category li {
+            margin-bottom: 5px;
+        }
+
+        .skill-category li:before {
+            content: "- ";
         }
 
         /* Contact Section */
         .contact {
-            padding: 6rem 0;
-            background: var(--bg-secondary);
-        }
-
-        .contact-content {
+            padding: 80px 0;
+            border-top: 1px solid #000;
             text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
+        .contact-links {
+            margin-top: 40px;
         }
 
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: var(--bg-card);
-            border-radius: 50%;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-
-        .social-link:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
+        .contact-links a {
+            color: #000;
+            text-decoration: underline;
+            margin: 0 20px;
         }
 
         /* Footer */
         .footer {
-            background: var(--bg-dark);
-            color: white;
-            padding: 2rem 0;
+            border-top: 1px solid #000;
+            padding: 40px 0;
             text-align: center;
         }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 2.2rem;
-                line-height: 1.2;
-                word-wrap: break-word;
-                white-space: normal;
-                margin-bottom: 1rem;
-            }
-
-            .project-header {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-card {
-                padding: 2rem;
-            }
-
-            .container {
-                padding: 0 1.5rem;
-            }
-        }
-        
-        /* Additional mobile styles for very small screens */
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 1.8rem;
-                line-height: 1.3;
+            
+            .hero h1 {
+                font-size: 20px;
             }
             
             .container {
-                padding: 0 1rem;
+                padding: 0 15px;
             }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary-color);
-            border-radius: 4px;
         }
     </style>
 </head>
@@ -528,12 +247,12 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <a href="#" class="nav-logo">Shafkat Rahman</a>
+            <a href="#" class="nav-logo">SHAFKAT RAHMAN</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
             </ul>
         </div>
     </nav>
@@ -541,266 +260,102 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <div class="hero-content fade-in-up">
-                <div class="hero-text">
-                    <h1>AI Engineer & Data Scientist</h1>
-                    <p class="subtitle">Specializing in Healthcare AI & Ethical Machine Learning</p>
-                    <p class="description">
-                        Former private equity research analyst turned AI engineer, focusing on fairness-aware algorithms, 
-                        quantum computing applications, and production machine learning systems. Expert in reinforcement learning, 
-                        healthcare AI, and bias mitigation techniques.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">
-                            <i class="fas fa-rocket"></i> View Projects
-                        </a>
-                        <a href="#contact" class="btn btn-secondary">
-                            <i class="fas fa-envelope"></i> Get In Touch
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="hero-card">
-                        <div class="profile-image">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>🌍 Based in Montréal</h3>
-                        <p style="margin: 1rem 0; color: var(--text-secondary);">
-                            🧠 Learning quantum algorithms for finance<br>
-                            🤝 Open to collaboration on quantum ML<br>
-                            🏥 Passionate about healthcare AI ethics
-                        </p>
-                    </div>
-                </div>
+            <h1>AI ENGINEER & DATA SCIENTIST</h1>
+            <p class="subtitle">SPECIALIZING IN HEALTHCARE AI & ETHICAL MACHINE LEARNING</p>
+            <p class="description">
+                Former private equity research analyst turned AI engineer. Focus: fairness-aware algorithms, 
+                quantum computing applications, production ML systems. Expert in reinforcement learning, 
+                healthcare AI, bias mitigation techniques.
+            </p>
+            <div>
+                <a href="#projects" class="btn">VIEW PROJECTS</a>
+                <a href="#contact" class="btn">GET IN TOUCH</a>
             </div>
+            <br><br>
+            <p>Based in Montreal, Canada</p>
+            <p>Learning quantum algorithms for finance</p>
+            <p>Open to collaboration on quantum ML</p>
+            <p>Passionate about healthcare AI ethics</p>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="featured-project" id="projects">
+    <section class="projects" id="projects">
         <div class="container">
-            <h2 class="section-title fade-in-up">Featured Projects</h2>
-            <div class="projects-grid fade-in-up">
-                
-                <!-- GRPO Healthcare AI Project -->
-                <div class="project-card">
-                    <h3 class="project-title">🏥 GRPO Healthcare AI</h3>
-                    <p class="project-subtitle">Group Robust Policy Optimization for Ethical Medical Resource Allocation</p>
-                    <div class="project-badges">
-                        <span class="badge success">25% Fairness Improvement</span>
-                        <span class="badge">Statistical Significance</span>
-                        <span class="badge accent">$3.5M Annual Value</span>
-                        <span class="badge warning">Production Ready</span>
-                    </div>
-                    <p style="margin: 1.5rem 0; color: var(--text-secondary); line-height: 1.6;">
-                        Novel reinforcement learning algorithm extending PPO with explicit fairness constraints. 
-                        Achieved statistically significant improvements in demographic equity while maintaining 
-                        operational efficiency across multiple hospital scenarios.
-                    </p>
-                    <div class="project-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">25.3%</div>
-                            <div class="stat-label">Fairness Gain</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">98.2%</div>
-                            <div class="stat-label">Efficiency Retained</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">4</div>
-                            <div class="stat-label">Hospital Scenarios</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">20+</div>
-                            <div class="stat-label">Experiments</div>
-                        </div>
-                    </div>
-                    <div style="margin-top: 2rem;">
-                        <a href="https://sakeeb91.github.io/reinforcement-learning-grpo/" class="btn btn-primary" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
-                        <a href="https://github.com/Sakeeb91/reinforcement-learning-grpo" class="btn btn-secondary" target="_blank">
-                            <i class="fab fa-github"></i> Source Code
-                        </a>
-                    </div>
+            <h2 class="section-title">FEATURED PROJECTS</h2>
+            
+            <!-- GRPO Healthcare AI Project -->
+            <div class="project">
+                <h3 class="project-title">GRPO HEALTHCARE AI</h3>
+                <p class="project-subtitle">Group Robust Policy Optimization for Ethical Medical Resource Allocation</p>
+                <p class="project-description">
+                    Novel reinforcement learning algorithm extending PPO with explicit fairness constraints. 
+                    Achieved 25% fairness improvement with statistical significance while maintaining 
+                    operational efficiency across multiple hospital scenarios.
+                </p>
+                <div class="project-links">
+                    <a href="https://sakeeb91.github.io/reinforcement-learning-grpo/" target="_blank">VIEW PROJECT</a>
+                    <a href="https://github.com/Sakeeb91/reinforcement-learning-grpo" target="_blank">SOURCE CODE</a>
                 </div>
+            </div>
 
-                <!-- Chaotic Systems Analysis Project -->
-                <div class="project-card">
-                    <h3 class="project-title">🌀 Chaotic Systems Analysis</h3>
-                    <p class="project-subtitle">Advanced Mathematical Toolkit for Nonlinear Dynamical Systems</p>
-                    <div class="project-badges">
-                        <span class="badge">Time-Delay Embedding</span>
-                        <span class="badge accent">Fractal Analysis</span>
-                        <span class="badge success">Scientific Computing</span>
-                        <span class="badge warning">Research Toolkit</span>
-                    </div>
-                    <p style="margin: 1.5rem 0; color: var(--text-secondary); line-height: 1.6;">
-                        Comprehensive Python framework for analyzing chaotic dynamical systems using advanced 
-                        mathematical techniques. Features automated parameter optimization, fractal dimension 
-                        estimation, and publication-quality scientific visualizations.
-                    </p>
-                    <div class="project-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">Rössler</div>
-                            <div class="stat-label">System Focus</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">3D</div>
-                            <div class="stat-label">Attractor Analysis</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">Auto</div>
-                            <div class="stat-label">Parameter Tuning</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Test Coverage</div>
-                        </div>
-                    </div>
-                    <div style="margin-top: 2rem;">
-                        <a href="https://sakeeb91.github.io/chaotic-systems-analysis/" class="btn btn-primary" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
-                        <a href="https://github.com/Sakeeb91/chaotic-systems-analysis" class="btn btn-secondary" target="_blank">
-                            <i class="fab fa-github"></i> Source Code
-                        </a>
-                    </div>
+            <!-- Chaotic Systems Analysis Project -->
+            <div class="project">
+                <h3 class="project-title">CHAOTIC SYSTEMS ANALYSIS</h3>
+                <p class="project-subtitle">Advanced Mathematical Toolkit for Nonlinear Dynamical Systems</p>
+                <p class="project-description">
+                    Comprehensive Python framework for analyzing chaotic dynamical systems using advanced 
+                    mathematical techniques. Features automated parameter optimization, fractal dimension 
+                    estimation, and publication-quality scientific visualizations.
+                </p>
+                <div class="project-links">
+                    <a href="https://sakeeb91.github.io/chaotic-systems-analysis/" target="_blank">VIEW PROJECT</a>
+                    <a href="https://github.com/Sakeeb91/chaotic-systems-analysis" target="_blank">SOURCE CODE</a>
                 </div>
+            </div>
 
-                <!-- Hopfield Market Regimes Project -->
-                <div class="project-card">
-                    <h3 class="project-title">🧠 Hopfield Network Market Regimes</h3>
-                    <p class="project-subtitle">Neural Physics Approach to Financial Market State Classification</p>
-                    <div class="project-badges">
-                        <span class="badge success">5 Market Regimes</span>
-                        <span class="badge">Neural Physics</span>
-                        <span class="badge accent">Pattern Recognition</span>
-                        <span class="badge warning">Dockerized</span>
-                    </div>
-                    <p style="margin: 1.5rem 0; color: var(--text-secondary); line-height: 1.6;">
-                        Novel application of Hopfield networks to financial markets, treating market regimes as stable 
-                        attractors in the network's energy landscape. Uses content-addressable memory for pattern recognition 
-                        and regime classification based on technical indicators, with comprehensive visualization suite.
-                    </p>
-                    <div style="margin: 1.5rem 0;">
-                        <img src="assets/hopfield-market-regimes/market_regimes_showcase.png" alt="Market Regimes Showcase" 
-                             style="width: 100%; border-radius: 0.5rem; box-shadow: var(--shadow);"/>
-                    </div>
-                    <div class="project-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">5</div>
-                            <div class="stat-label">Market Regimes</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">Binary</div>
-                            <div class="stat-label">Pattern Encoding</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">Hebbian</div>
-                            <div class="stat-label">Learning Rule</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">Jupyter</div>
-                            <div class="stat-label">Demo Included</div>
-                        </div>
-                    </div>
-                    <div style="margin-top: 2rem;">
-                        <a href="https://sakeeb91.github.io/hopfield-market-regimes/" class="btn btn-primary" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
-                        <a href="https://github.com/Sakeeb91/hopfield-market-regimes" class="btn btn-secondary" target="_blank">
-                            <i class="fab fa-github"></i> Source Code
-                        </a>
-                    </div>
+            <!-- Hopfield Market Regimes Project -->
+            <div class="project">
+                <h3 class="project-title">HOPFIELD NETWORK MARKET REGIMES</h3>
+                <p class="project-subtitle">Neural Physics Approach to Financial Market State Classification</p>
+                <p class="project-description">
+                    Novel application of Hopfield networks to financial markets, treating market regimes as stable 
+                    attractors in the network's energy landscape. Uses content-addressable memory for pattern recognition 
+                    and regime classification based on technical indicators.
+                </p>
+                <div class="project-links">
+                    <a href="https://sakeeb91.github.io/hopfield-market-regimes/" target="_blank">VIEW PROJECT</a>
+                    <a href="https://github.com/Sakeeb91/hopfield-market-regimes" target="_blank">SOURCE CODE</a>
                 </div>
+            </div>
 
-                <!-- EACTO Project -->
-                <div class="project-card">
-                    <h3 class="project-title">📈 EACTO - Risk Management System</h3>
-                    <p class="project-subtitle">Entropy-Adaptive Cybernetic Threshold Optimizer for Dynamic Financial Risk Management</p>
-                    <div class="project-badges">
-                        <span class="badge success">-0.9474 Correlation</span>
-                        <span class="badge">Dynamic Adaptation</span>
-                        <span class="badge accent">MPC Control</span>
-                        <span class="badge warning">Production Ready</span>
-                    </div>
-                    <p style="margin: 1.5rem 0; color: var(--text-secondary); line-height: 1.6;">
-                        Advanced financial risk management system that dynamically adapts risk thresholds based on market complexity measures. 
-                        Leverages information theory, statistical modeling, and cybernetic control systems to outperform static risk models 
-                        by becoming conservative during high uncertainty and aggressive during predictable periods.
-                    </p>
-                    <div class="project-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">-0.9474</div>
-                            <div class="stat-label">Entropy Correlation</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">Dynamic</div>
-                            <div class="stat-label">Threshold Control</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">GARCH</div>
-                            <div class="stat-label">ML Forecasting</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">MPC</div>
-                            <div class="stat-label">Optimization</div>
-                        </div>
-                    </div>
-                    <div style="margin-top: 2rem;">
-                        <a href="https://sakeeb91.github.io/EACTO/" class="btn btn-primary" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
-                        <a href="https://github.com/Sakeeb91/EACTO" class="btn btn-secondary" target="_blank">
-                            <i class="fab fa-github"></i> Source Code
-                        </a>
-                    </div>
+            <!-- EACTO Project -->
+            <div class="project">
+                <h3 class="project-title">EACTO - RISK MANAGEMENT SYSTEM</h3>
+                <p class="project-subtitle">Entropy-Adaptive Cybernetic Threshold Optimizer for Dynamic Financial Risk Management</p>
+                <p class="project-description">
+                    Advanced financial risk management system that dynamically adapts risk thresholds based on market complexity measures. 
+                    Leverages information theory, statistical modeling, and cybernetic control systems to outperform static risk models.
+                </p>
+                <div class="project-links">
+                    <a href="https://sakeeb91.github.io/EACTO/" target="_blank">VIEW PROJECT</a>
+                    <a href="https://github.com/Sakeeb91/EACTO" target="_blank">SOURCE CODE</a>
                 </div>
+            </div>
 
-                <!-- Financial Asset Dynamics Project -->
-                <div class="project-card">
-                    <h3 class="project-title">💰 Financial Asset Dynamics</h3>
-                    <p class="project-subtitle">Advanced Quantitative Finance Library for Institutional-Grade Analytics</p>
-                    <div class="project-badges">
-                        <span class="badge success">Institutional Quality</span>
-                        <span class="badge">Portfolio Optimization</span>
-                        <span class="badge accent">Options Pricing</span>
-                        <span class="badge warning">Risk Management</span>
-                    </div>
-                    <p style="margin: 1.5rem 0; color: var(--text-secondary); line-height: 1.6;">
-                        Comprehensive quantitative finance library implementing advanced mathematical models used by hedge funds 
-                        and investment banks. Features portfolio optimization, VaR/CVaR risk metrics, Black-Scholes options pricing, 
-                        market regime detection, and real-time data integration with professional-grade visualizations.
-                    </p>
-                    <div class="project-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">6+</div>
-                            <div class="stat-label">SDE Models</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">5</div>
-                            <div class="stat-label">Optimization Strategies</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">20+</div>
-                            <div class="stat-label">Risk Metrics</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">Real-time</div>
-                            <div class="stat-label">Market Data</div>
-                        </div>
-                    </div>
-                    <div style="margin-top: 2rem;">
-                        <a href="https://sakeeb91.github.io/financial-asset-dynamics/" class="btn btn-primary" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
-                        <a href="https://github.com/Sakeeb91/financial-asset-dynamics" class="btn btn-secondary" target="_blank">
-                            <i class="fab fa-github"></i> Source Code
-                        </a>
-                    </div>
+            <!-- Financial Asset Dynamics Project -->
+            <div class="project">
+                <h3 class="project-title">FINANCIAL ASSET DYNAMICS</h3>
+                <p class="project-subtitle">Advanced Quantitative Finance Library for Institutional-Grade Analytics</p>
+                <p class="project-description">
+                    Comprehensive quantitative finance library implementing advanced mathematical models used by hedge funds 
+                    and investment banks. Features portfolio optimization, VaR/CVaR risk metrics, Black-Scholes options pricing, 
+                    market regime detection, and real-time data integration.
+                </p>
+                <div class="project-links">
+                    <a href="https://sakeeb91.github.io/financial-asset-dynamics/" target="_blank">VIEW PROJECT</a>
+                    <a href="https://github.com/Sakeeb91/financial-asset-dynamics" target="_blank">SOURCE CODE</a>
                 </div>
-                
             </div>
         </div>
     </section>
@@ -808,63 +363,63 @@
     <!-- Skills Section -->
     <section class="skills" id="skills">
         <div class="container">
-            <h2 class="section-title fade-in-up">Technical Expertise</h2>
-            <div class="skills-grid fade-in-up">
+            <h2 class="section-title">TECHNICAL EXPERTISE</h2>
+            <div class="skills-list">
                 <div class="skill-category">
-                    <h3><i class="fas fa-brain"></i> Machine Learning & AI</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">Reinforcement Learning</span>
-                        <span class="skill-tag">Computer Vision</span>
-                        <span class="skill-tag">NLP</span>
-                        <span class="skill-tag">Ethical AI</span>
-                    </div>
+                    <h3>MACHINE LEARNING & AI</h3>
+                    <ul>
+                        <li>PyTorch</li>
+                        <li>TensorFlow</li>
+                        <li>Scikit-learn</li>
+                        <li>Reinforcement Learning</li>
+                        <li>Computer Vision</li>
+                        <li>NLP</li>
+                        <li>Ethical AI</li>
+                    </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Data Engineering</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Apache Spark</span>
-                        <span class="skill-tag">ETL Pipelines</span>
-                        <span class="skill-tag">Data Visualization</span>
-                    </div>
+                    <h3>DATA ENGINEERING</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>Pandas</li>
+                        <li>NumPy</li>
+                        <li>Apache Spark</li>
+                        <li>ETL Pipelines</li>
+                        <li>Data Visualization</li>
+                    </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Google Cloud</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">MLOps</span>
-                        <span class="skill-tag">CI/CD</span>
-                        <span class="skill-tag">Monitoring</span>
-                    </div>
+                    <h3>CLOUD & DEVOPS</h3>
+                    <ul>
+                        <li>Google Cloud</li>
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                        <li>MLOps</li>
+                        <li>CI/CD</li>
+                        <li>Monitoring</li>
+                    </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-atom"></i> Quantum Computing</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Quantum Algorithms</span>
-                        <span class="skill-tag">Qiskit</span>
-                        <span class="skill-tag">Financial Applications</span>
-                        <span class="skill-tag">Quantum ML</span>
-                        <span class="skill-tag">Circuit Design</span>
-                    </div>
+                    <h3>QUANTUM COMPUTING</h3>
+                    <ul>
+                        <li>Quantum Algorithms</li>
+                        <li>Qiskit</li>
+                        <li>Financial Applications</li>
+                        <li>Quantum ML</li>
+                        <li>Circuit Design</li>
+                    </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-wave-square"></i> Computational Physics</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Chaotic Systems</span>
-                        <span class="skill-tag">Nonlinear Dynamics</span>
-                        <span class="skill-tag">Fractal Analysis</span>
-                        <span class="skill-tag">Time-Series Analysis</span>
-                        <span class="skill-tag">Mathematical Modeling</span>
-                        <span class="skill-tag">Scientific Computing</span>
-                    </div>
+                    <h3>COMPUTATIONAL PHYSICS</h3>
+                    <ul>
+                        <li>Chaotic Systems</li>
+                        <li>Nonlinear Dynamics</li>
+                        <li>Fractal Analysis</li>
+                        <li>Time-Series Analysis</li>
+                        <li>Mathematical Modeling</li>
+                        <li>Scientific Computing</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -873,46 +428,31 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="contact-content fade-in-up">
-                <h2 class="section-title">Let's Connect</h2>
-                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
-                    Interested in collaborating on quantum computing, healthcare AI, or ethical machine learning projects? 
-                    Let's discuss how we can work together to build impactful AI solutions.
-                </p>
-                <div class="social-links">
-                    <a href="https://github.com/Sakeeb91" class="social-link" target="_blank" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/shafkat-rahman/" class="social-link" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://twitter.com/Sakeeb91" class="social-link" target="_blank" title="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://medium.com/@sakeebrahman" class="social-link" target="_blank" title="Medium">
-                        <i class="fab fa-medium"></i>
-                    </a>
-                    <a href="https://hashnode.com/@Sakeeb.hashnode.dev" class="social-link" target="_blank" title="Hashnode">
-                        <i class="fas fa-blog"></i>
-                    </a>
-                </div>
-                <div style="margin-top: 2rem;">
-                    <a href="mailto:rahman.sakeeb@gmail.com" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i> Send Email
-                    </a>
-                </div>
+            <h2 class="section-title">LET'S CONNECT</h2>
+            <p>
+                Interested in collaborating on quantum computing, healthcare AI, or ethical machine learning projects? 
+                Let's discuss how we can work together to build impactful AI solutions.
+            </p>
+            <div class="contact-links">
+                <a href="https://github.com/Sakeeb91" target="_blank">GITHUB</a>
+                <a href="https://linkedin.com/in/shafkat-rahman/" target="_blank">LINKEDIN</a>
+                <a href="https://twitter.com/Sakeeb91" target="_blank">TWITTER</a>
+                <a href="https://medium.com/@sakeebrahman" target="_blank">MEDIUM</a>
+                <a href="https://hashnode.com/@Sakeeb.hashnode.dev" target="_blank">HASHNODE</a>
             </div>
+            <br>
+            <a href="mailto:rahman.sakeeb@gmail.com" class="btn">SEND EMAIL</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Shafkat Rahman. Built with passion for ethical AI and quantum computing.</p>
+            <p>(c) 2024 SHAFKAT RAHMAN. BUILT WITH PASSION FOR ETHICAL AI AND QUANTUM COMPUTING.</p>
         </div>
     </footer>
 
-    <!-- JavaScript for smooth scrolling and animations -->
+    <!-- JavaScript for smooth scrolling -->
     <script>
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -926,60 +466,6 @@
                     });
                 }
             });
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('.nav');
-            if (window.scrollY > 100) {
-                nav.style.background = 'rgba(255, 255, 255, 0.98)';
-                nav.style.boxShadow = 'var(--shadow)';
-            } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.95)';
-                nav.style.boxShadow = 'none';
-            }
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.8s ease-out';
-            observer.observe(el);
-        });
-
-        // Typing effect for hero title (optional enhancement)
-        const heroTitle = document.querySelector('.hero-text h1');
-        const text = heroTitle.textContent;
-        heroTitle.textContent = '';
-        
-        let i = 0;
-        function typeWriter() {
-            if (i < text.length) {
-                heroTitle.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        }
-        
-        // Start typing effect after page load
-        window.addEventListener('load', () => {
-            setTimeout(typeWriter, 1000);
         });
     </script>
 </body>
