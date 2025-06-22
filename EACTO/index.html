@@ -3,11 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EACTO - Risk Management System</title>
+    <title>EACTO Risk Management System - Shafkat Rahman</title>
+    <meta name="description" content="Entropy-Adaptive Cybernetic Threshold Optimizer for dynamic financial risk management using information theory and control systems">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            color: #000;
+            background-color: #fff;
+            font-size: 14px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav {
+            background: #fff;
+            border-bottom: 1px solid #000;
+            padding: 20px 0;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav-home {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .nav-home:hover {
+            text-decoration: underline;
+        }
+        .header {
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid #000;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            font-size: 16px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid #000;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .intro-box {
+            background: #f5f5f5;
+            padding: 30px;
+            border-left: 4px solid #000;
+            margin-bottom: 40px;
+        }
+        .feature {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+        .feature:last-child {
+            border-bottom: none;
+        }
+        .feature h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #000;
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #000;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <h1>EACTO - Risk Management System</h1>
-    <p>Entropy-Adaptive Cybernetic Threshold Optimizer for Dynamic Financial Risk Management</p>
-    <p>Project page coming soon...</p>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="https://sakeeb91.github.io/" class="nav-home">← Back to Portfolio</a>
+            <span>EACTO Risk Management</span>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1>EACTO Risk Management System</h1>
+            <p class="subtitle">Entropy-Adaptive Cybernetic Threshold Optimizer for Dynamic Financial Risk Management</p>
+            <div>
+                <a href="https://github.com/Sakeeb91/EACTO" class="btn" target="_blank">View Code</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="intro-box">
+                <h2>What is this project about?</h2>
+                <p>
+                    Traditional risk management systems use fixed rules: "Never risk more than 2% on a single trade" or "Close all positions when the market falls 10%." 
+                    But markets are dynamic - what's risky in calm periods might be conservative during crises, and vice versa. 
+                    Fixed rules often fail exactly when you need them most.
+                </p>
+                <br>
+                <p>
+                    EACTO (Entropy-Adaptive Cybernetic Threshold Optimizer) is an intelligent risk management system that adapts its risk thresholds 
+                    based on market complexity and uncertainty. It's like having a smart thermostat for your financial risk - 
+                    automatically adjusting to changing conditions to maintain optimal protection.
+                </p>
+            </div>
+
+            <h2 class="section-title">The Problem with Static Risk Management</h2>
+            
+            <div class="feature">
+                <h3>One Size Doesn't Fit All Markets</h3>
+                <p>
+                    A 1% daily move in a stable market might signal danger, while the same move during a crisis might be perfectly normal. 
+                    Static risk models can't distinguish between these scenarios, leading to either excessive conservatism (missing opportunities) 
+                    or inadequate protection (suffering unexpected losses).
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Markets Change Faster Than Rules</h3>
+                <p>
+                    Financial institutions often update their risk models quarterly or annually, but market conditions can change overnight. 
+                    By the time humans recognize a shift and adjust the rules, significant damage may already be done. 
+                    Automated, real-time adaptation is essential.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>The Paradox of Risk Measurement</h3>
+                <p>
+                    Traditional risk measures (like Value-at-Risk) work well in normal times but break down during crises - 
+                    exactly when accurate risk measurement is most crucial. This is like having a fire alarm that only works when there's no fire.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">How EACTO Works</h2>
+            
+            <div class="feature">
+                <h3>Entropy as a Market Complexity Measure</h3>
+                <p>
+                    EACTO uses information theory concepts to measure market "entropy" - essentially how chaotic or unpredictable the market is. 
+                    High entropy indicates complex, hard-to-predict conditions requiring more conservative risk thresholds. 
+                    Low entropy suggests stable conditions where you can afford to take more risk.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Cybernetic Control Systems</h3>
+                <p>
+                    Borrowing from engineering control theory, EACTO implements feedback loops that continuously monitor market conditions 
+                    and adjust risk parameters. Like a cruise control system that adapts to road conditions, it maintains your desired risk level 
+                    despite changing market environments.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Dynamic Threshold Optimization</h3>
+                <p>
+                    Rather than using fixed risk limits, EACTO optimizes thresholds in real-time based on current market complexity. 
+                    During calm periods, it might allow larger position sizes. During volatile periods, it automatically tightens controls. 
+                    This dynamic approach maximizes returns while maintaining consistent risk exposure.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Multi-Scale Analysis</h3>
+                <p>
+                    The system analyzes market complexity across multiple time horizons - from minute-by-minute fluctuations to 
+                    longer-term structural changes. This comprehensive view ensures that both short-term volatility spikes and 
+                    gradual regime shifts are properly incorporated into risk decisions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Key Benefits</h2>
+            
+            <div class="feature">
+                <h3>Adaptive Risk Management</h3>
+                <p>
+                    Automatically adjusts risk tolerance based on market conditions. During stable periods, captures more upside by allowing 
+                    larger positions. During uncertain periods, provides enhanced protection by tightening risk controls. 
+                    This balance maximizes risk-adjusted returns.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Early Warning System</h3>
+                <p>
+                    Rising market entropy often precedes major market dislocations. EACTO can detect these early warning signs and 
+                    proactively reduce risk exposure before problems become apparent to traditional risk measures. 
+                    This forward-looking approach prevents rather than just reacts to losses.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Robust Performance</h3>
+                <p>
+                    Unlike models that work well in backtests but fail in practice, EACTO is designed for real-world robustness. 
+                    It handles market microstructure effects, data quality issues, and regime changes that commonly derail academic models 
+                    when deployed in practice.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Regulatory Compliance</h3>
+                <p>
+                    Provides auditable, quantitative justification for risk management decisions. Regulators increasingly expect 
+                    dynamic risk management that adapts to changing conditions rather than static rules that may be obsolete. 
+                    EACTO provides the documentation and rationale needed for regulatory approval.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Who Benefits?</h2>
+            
+            <div class="feature">
+                <h3>Trading Firms & Hedge Funds</h3>
+                <p>
+                    Professional trading operations need sophisticated risk management that doesn't impede profitable strategies. 
+                    EACTO allows aggressive risk-taking during favorable conditions while providing robust protection during market stress. 
+                    This flexibility is crucial for maintaining competitive advantage.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Banks & Financial Institutions</h3>
+                <p>
+                    Large financial institutions must balance profitability with regulatory compliance and depositor protection. 
+                    EACTO provides the dynamic risk management capabilities needed to optimize this balance while meeting 
+                    increasingly sophisticated regulatory requirements.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Portfolio Managers</h3>
+                <p>
+                    Whether managing pension funds, endowments, or private wealth, portfolio managers need tools that adapt to 
+                    changing market conditions. EACTO helps maintain consistent risk levels across different market regimes, 
+                    protecting client capital while maximizing long-term returns.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Risk Managers & Quantitative Analysts</h3>
+                <p>
+                    Risk professionals need advanced tools that go beyond traditional VaR models. EACTO provides cutting-edge 
+                    risk measurement and control capabilities that remain effective during market stress periods when 
+                    conventional approaches break down.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Innovation</h2>
+            
+            <div class="feature">
+                <h3>Information-Theoretic Risk Measures</h3>
+                <p>
+                    Applies concepts from information theory and statistical mechanics to financial risk management. 
+                    This interdisciplinary approach provides new insights into market behavior and risk measurement 
+                    that aren't available from traditional financial models.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Real-Time Adaptation</h3>
+                <p>
+                    Unlike traditional risk models that require periodic recalibration, EACTO continuously adapts to changing conditions. 
+                    This real-time capability ensures that risk management remains effective even during rapid market transitions 
+                    that would obsolete static models.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Robust Statistical Methods</h3>
+                <p>
+                    Incorporates advanced statistical techniques that work reliably with the heavy-tailed, non-normal distributions 
+                    common in financial data. Traditional risk models often assume normal distributions, leading to systematic 
+                    underestimation of tail risks.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Scalable Architecture</h3>
+                <p>
+                    Designed for high-frequency operation with large portfolios. Can process thousands of positions across 
+                    multiple asset classes in real-time, making it suitable for the most demanding institutional applications. 
+                    Performance scales efficiently with portfolio size and data frequency.
+                </p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

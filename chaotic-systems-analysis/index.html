@@ -3,11 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chaotic Systems Analysis</title>
+    <title>Chaotic Systems Analysis - Shafkat Rahman</title>
+    <meta name="description" content="Advanced mathematical toolkit for analyzing nonlinear dynamical systems, chaos theory, and complex behavior in physical systems">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            color: #000;
+            background-color: #fff;
+            font-size: 14px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav {
+            background: #fff;
+            border-bottom: 1px solid #000;
+            padding: 20px 0;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav-home {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .nav-home:hover {
+            text-decoration: underline;
+        }
+        .header {
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid #000;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            font-size: 16px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid #000;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .intro-box {
+            background: #f5f5f5;
+            padding: 30px;
+            border-left: 4px solid #000;
+            margin-bottom: 40px;
+        }
+        .feature {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+        .feature:last-child {
+            border-bottom: none;
+        }
+        .feature h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #000;
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #000;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <h1>Chaotic Systems Analysis</h1>
-    <p>Advanced Mathematical Toolkit for Nonlinear Dynamical Systems</p>
-    <p>Project page coming soon...</p>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="https://sakeeb91.github.io/" class="nav-home">← Back to Portfolio</a>
+            <span>Chaotic Systems Analysis</span>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1>Chaotic Systems Analysis</h1>
+            <p class="subtitle">Advanced Mathematical Toolkit for Nonlinear Dynamical Systems</p>
+            <div>
+                <a href="https://github.com/Sakeeb91/chaotic-systems-analysis" class="btn" target="_blank">View Code</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="intro-box">
+                <h2>What is this project about?</h2>
+                <p>
+                    Have you ever wondered why weather prediction is limited to about 10 days, or why some simple mathematical equations can produce 
+                    incredibly complex, seemingly random behavior? This project explores the fascinating world of chaos theory and nonlinear dynamics.
+                </p>
+                <br>
+                <p>
+                    Chaotic Systems Analysis is a comprehensive Python toolkit that helps researchers, engineers, and scientists analyze complex dynamical systems 
+                    that exhibit chaotic behavior. Think of it as a powerful microscope for understanding the hidden patterns in seemingly random phenomena.
+                </p>
+            </div>
+
+            <h2 class="section-title">Understanding Chaos</h2>
+            
+            <div class="feature">
+                <h3>What Makes a System Chaotic?</h3>
+                <p>
+                    Chaos doesn't mean random - it's actually deterministic behavior that's extremely sensitive to initial conditions. 
+                    A tiny change in starting conditions can lead to dramatically different outcomes. This is often called the "butterfly effect" - 
+                    where a butterfly flapping its wings in Brazil could theoretically influence weather patterns in Texas.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Real-World Examples</h3>
+                <p>
+                    Chaotic behavior appears everywhere: stock market fluctuations, population dynamics, cardiac arrhythmias, laser dynamics, 
+                    climate systems, and even the dripping of a faucet. Understanding these systems helps us predict their behavior within limits 
+                    and sometimes control them.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Why Traditional Analysis Fails</h3>
+                <p>
+                    Linear mathematical tools (like simple averages or linear regression) completely miss the rich structure in chaotic systems. 
+                    You need specialized techniques to uncover the hidden order within the apparent chaos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Powerful Analysis Tools</h2>
+            
+            <div class="feature">
+                <h3>Fractal Dimension Calculation</h3>
+                <p>
+                    Measures how complex the system's behavior is by calculating how the system fills space. A fractal dimension between 2 and 3 
+                    often indicates chaotic behavior. This is like measuring the "roughness" of the system's trajectory through its state space.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Lyapunov Exponents</h3>
+                <p>
+                    These numbers tell you how quickly nearby trajectories diverge from each other - essentially measuring the "strength" of chaos. 
+                    Positive Lyapunov exponents indicate chaos, while negative ones suggest the system settles into predictable patterns.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Phase Space Reconstruction</h3>
+                <p>
+                    Even if you can only measure one variable from a complex system (like just temperature from a complex climate model), 
+                    this technique can reconstruct the full dynamics. It's like inferring the entire dance from watching just one dancer's shadow.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Poincaré Maps</h3>
+                <p>
+                    These create simplified 2D snapshots of complex multi-dimensional behavior, helping visualize patterns that would be 
+                    impossible to see otherwise. Think of it as taking strategic snapshots of a complex 3D dance to understand the choreography.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Who Benefits from This?</h2>
+            
+            <div class="feature">
+                <h3>Researchers & Scientists</h3>
+                <p>
+                    Physicists studying laser dynamics, biologists analyzing population cycles, neuroscientists examining brain activity, 
+                    or climate scientists understanding weather patterns. The toolkit provides publication-ready analysis and visualizations.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Engineers</h3>
+                <p>
+                    Control systems engineers dealing with nonlinear behavior, chemical engineers analyzing reactor dynamics, 
+                    or mechanical engineers studying vibrations. Understanding chaos helps in designing more robust systems.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Financial Analysts</h3>
+                <p>
+                    Market dynamics often exhibit chaotic behavior. This toolkit can help identify regime changes, understand volatility patterns, 
+                    and develop more sophisticated risk models that account for nonlinear market behavior.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Students & Educators</h3>
+                <p>
+                    Learn chaos theory through hands-on experimentation. The toolkit includes classic examples like the Lorenz system, 
+                    making abstract mathematical concepts tangible and visual.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            
+            <div class="feature">
+                <h3>Automated Parameter Optimization</h3>
+                <p>
+                    The system automatically finds the best parameters for analysis techniques, removing guesswork and ensuring reliable results. 
+                    This is crucial because chaotic systems are extremely sensitive to analysis parameters.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Interactive Visualizations</h3>
+                <p>
+                    Beautiful, publication-quality plots that help you understand your data intuitively. 3D phase portraits, bifurcation diagrams, 
+                    and time series plots that reveal the hidden structure in your data.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Robust Statistical Methods</h3>
+                <p>
+                    Built-in statistical significance testing and confidence intervals ensure your findings are scientifically rigorous. 
+                    The toolkit handles noisy data and finite-size effects that commonly plague chaos analysis.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Comprehensive Documentation</h3>
+                <p>
+                    Detailed examples, theoretical background, and practical guidance help you understand not just how to use the tools, 
+                    but when and why to use them. Perfect for both beginners and experts.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Innovation</h2>
+            
+            <div class="feature">
+                <h3>Optimized Algorithms</h3>
+                <p>
+                    Implements state-of-the-art algorithms from nonlinear dynamics research, optimized for computational efficiency. 
+                    Can handle large datasets that would be impractical with naive implementations.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Noise-Robust Analysis</h3>
+                <p>
+                    Real-world data is always noisy. The toolkit includes advanced filtering and denoising techniques specifically designed 
+                    for chaotic systems, where traditional smoothing can destroy the very features you're trying to study.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Multi-Scale Analysis</h3>
+                <p>
+                    Chaotic systems often operate on multiple time scales simultaneously. The toolkit can separate and analyze these different 
+                    scales, revealing how fast and slow dynamics interact to create complex behavior.
+                </p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

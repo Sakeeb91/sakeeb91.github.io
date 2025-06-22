@@ -3,11 +3,386 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Asset Dynamics</title>
+    <title>Financial Asset Dynamics - Shafkat Rahman</title>
+    <meta name="description" content="Advanced quantitative finance library for institutional-grade analytics including portfolio optimization, risk metrics, and options pricing">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            color: #000;
+            background-color: #fff;
+            font-size: 14px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav {
+            background: #fff;
+            border-bottom: 1px solid #000;
+            padding: 20px 0;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav-home {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .nav-home:hover {
+            text-decoration: underline;
+        }
+        .header {
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid #000;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            font-size: 16px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid #000;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .intro-box {
+            background: #f5f5f5;
+            padding: 30px;
+            border-left: 4px solid #000;
+            margin-bottom: 40px;
+        }
+        .feature {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+        .feature:last-child {
+            border-bottom: none;
+        }
+        .feature h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #000;
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #000;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <h1>Financial Asset Dynamics</h1>
-    <p>Advanced Quantitative Finance Library for Institutional-Grade Analytics</p>
-    <p>Project page coming soon...</p>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="https://sakeeb91.github.io/" class="nav-home">← Back to Portfolio</a>
+            <span>Financial Asset Dynamics</span>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1>Financial Asset Dynamics</h1>
+            <p class="subtitle">Advanced Quantitative Finance Library for Institutional-Grade Analytics</p>
+            <div>
+                <a href="https://github.com/Sakeeb91/financial-asset-dynamics" class="btn" target="_blank">View Code</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="intro-box">
+                <h2>What is this project about?</h2>
+                <p>
+                    When hedge funds and investment banks make billion-dollar decisions, they rely on sophisticated mathematical models 
+                    and quantitative analysis tools that aren't available to most investors. These institutions employ teams of PhD-level 
+                    quantitative analysts (quants) who develop advanced algorithms for pricing, risk management, and portfolio optimization.
+                </p>
+                <br>
+                <p>
+                    Financial Asset Dynamics is a comprehensive Python library that democratizes these institutional-grade quantitative finance tools. 
+                    It's like having a team of Wall Street quants at your fingertips - providing the same mathematical rigor and analytical 
+                    power used by the world's most successful financial institutions.
+                </p>
+            </div>
+
+            <h2 class="section-title">The Quantitative Finance Challenge</h2>
+            
+            <div class="feature">
+                <h3>Beyond Basic Analysis</h3>
+                <p>
+                    Simple buy-and-hold strategies and basic technical analysis are no longer sufficient in today's complex markets. 
+                    Modern finance requires sophisticated mathematical models that can handle multiple assets, complex derivatives, 
+                    non-normal return distributions, and dynamic risk management. This level of analysis requires advanced quantitative tools.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>The Institutional Advantage</h3>
+                <p>
+                    Large institutions have significant advantages: access to expensive Bloomberg terminals, teams of quantitative analysts, 
+                    and proprietary trading systems. They use advanced mathematics to identify opportunities, manage risk, and optimize portfolios 
+                    in ways that aren't available to smaller players.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Data Complexity</h3>
+                <p>
+                    Financial markets generate massive amounts of complex data: price movements, volatilities, correlations, economic indicators, 
+                    and sentiment measures. Making sense of this data requires sophisticated statistical techniques and mathematical models 
+                    that can extract meaningful signals from noise.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Core Capabilities</h2>
+            
+            <div class="feature">
+                <h3>Advanced Portfolio Optimization</h3>
+                <p>
+                    Goes far beyond simple mean-variance optimization to include factors like transaction costs, liquidity constraints, 
+                    and regulatory limits. Implements cutting-edge techniques like Black-Litterman models, risk parity approaches, 
+                    and robust optimization that work reliably in practice, not just in textbooks.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Comprehensive Risk Analytics</h3>
+                <p>
+                    Provides institutional-quality risk metrics including Value-at-Risk (VaR), Conditional Value-at-Risk (CVaR), 
+                    maximum drawdown analysis, and stress testing. These tools help you understand not just expected returns, 
+                    but the full spectrum of potential outcomes and their probabilities.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Options Pricing & Greeks</h3>
+                <p>
+                    Implements the Black-Scholes model and its extensions for pricing options and other derivatives. 
+                    Calculates the "Greeks" (Delta, Gamma, Theta, Vega, Rho) that professional traders use to understand 
+                    how option values change with market conditions. Essential for sophisticated hedging strategies.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Market Regime Detection</h3>
+                <p>
+                    Automatically identifies different market environments (bull markets, bear markets, high volatility periods) 
+                    using statistical techniques. This regime awareness allows for dynamic strategy adjustment - 
+                    using momentum strategies in trending markets and mean-reversion strategies in range-bound markets.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Who Benefits?</h2>
+            
+            <div class="feature">
+                <h3>Individual Investors & Advisors</h3>
+                <p>
+                    Sophisticated individual investors can access institutional-quality analysis without the institutional costs. 
+                    Financial advisors can provide more rigorous analysis to clients, differentiating their services and 
+                    improving investment outcomes through better risk management and portfolio construction.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Small to Mid-Size Funds</h3>
+                <p>
+                    Smaller hedge funds, family offices, and asset management firms often can't afford large quantitative teams. 
+                    This library provides access to the same analytical tools used by larger institutions, 
+                    leveling the competitive playing field in quantitative analysis.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Academic Researchers & Students</h3>
+                <p>
+                    Finance researchers need robust, well-tested implementations of quantitative models for their studies. 
+                    Students learning quantitative finance can see how theoretical concepts are implemented in practice, 
+                    bridging the gap between academic theory and real-world application.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Fintech Developers</h3>
+                <p>
+                    Companies building financial technology products need reliable quantitative finance components. 
+                    Rather than developing these complex mathematical models from scratch, they can integrate 
+                    proven, well-tested implementations to accelerate their product development.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Advanced Features</h2>
+            
+            <div class="feature">
+                <h3>Real-Time Data Integration</h3>
+                <p>
+                    Seamlessly connects to multiple data sources including Yahoo Finance, Alpha Vantage, and other market data providers. 
+                    Handles data cleaning, normalization, and synchronization automatically, so you can focus on analysis rather than 
+                    data wrangling. Supports both historical backtesting and real-time analysis.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Performance Attribution Analysis</h3>
+                <p>
+                    Decomposes portfolio returns to understand what's driving performance: market exposure, sector allocation, 
+                    security selection, or timing decisions. This analysis is crucial for understanding whether returns come from 
+                    skill or luck, and for improving future investment decisions.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Monte Carlo Simulation</h3>
+                <p>
+                    Uses advanced simulation techniques to model thousands of potential market scenarios, providing robust estimates 
+                    of risk and return. This probabilistic approach gives you a much richer understanding of potential outcomes 
+                    than simple historical analysis or deterministic models.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Factor Model Analysis</h3>
+                <p>
+                    Implements multi-factor models (like Fama-French) to understand systematic risk exposures and identify 
+                    genuine alpha generation. This analysis helps separate skill-based returns from compensation for bearing 
+                    systematic risk factors, crucial for performance evaluation and attribution.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Excellence</h2>
+            
+            <div class="feature">
+                <h3>Production-Ready Code</h3>
+                <p>
+                    Built with the same standards used in institutional trading systems: comprehensive error handling, 
+                    extensive testing, performance optimization, and detailed documentation. The code is designed for 
+                    reliability and maintainability in production environments, not just academic exercises.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Numerical Stability</h3>
+                <p>
+                    Financial calculations often involve numerical challenges: matrix inversions, optimization problems, 
+                    and numerical integration. The library uses numerically stable algorithms and handles edge cases 
+                    that can cause naive implementations to fail with real-world data.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Modular Architecture</h3>
+                <p>
+                    Clean, modular design allows you to use individual components independently or combine them for 
+                    comprehensive analysis. Whether you need just portfolio optimization or a complete quantitative 
+                    analysis pipeline, the flexible architecture adapts to your specific requirements.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Extensive Validation</h3>
+                <p>
+                    All models are validated against known benchmarks and real market data. Results are cross-checked 
+                    with established financial theory and empirical studies, ensuring that the implementations produce 
+                    results consistent with academic literature and industry practice.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Real-World Applications</h2>
+            
+            <div class="feature">
+                <h3>Portfolio Construction & Optimization</h3>
+                <p>
+                    Build optimal portfolios that balance return objectives with risk constraints. Handle real-world complications 
+                    like transaction costs, minimum position sizes, and sector concentration limits. 
+                    Adapt portfolio construction to different market regimes and investor objectives.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Risk Management & Monitoring</h3>
+                <p>
+                    Implement comprehensive risk management frameworks that monitor portfolio risk in real-time. 
+                    Set up automated alerts for risk limit breaches, perform stress testing against historical scenarios, 
+                    and maintain risk reporting for compliance and governance requirements.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Strategy Development & Backtesting</h3>
+                <p>
+                    Develop and test quantitative investment strategies using rigorous backtesting methodologies. 
+                    Account for realistic transaction costs, market impact, and survivorship bias. 
+                    Validate strategies across different market conditions and time periods.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Derivatives Trading & Hedging</h3>
+                <p>
+                    Price options and other derivatives accurately, calculate hedge ratios, and implement sophisticated 
+                    hedging strategies. Monitor Greeks exposure and adjust hedges dynamically as market conditions change. 
+                    Essential for managing portfolios that include derivatives or implementing income-generating strategies.
+                </p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

@@ -3,11 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hopfield Network Market Regimes</title>
+    <title>Hopfield Network Market Regimes - Shafkat Rahman</title>
+    <meta name="description" content="Neural physics approach to financial market state classification using Hopfield networks and content-addressable memory">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            color: #000;
+            background-color: #fff;
+            font-size: 14px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav {
+            background: #fff;
+            border-bottom: 1px solid #000;
+            padding: 20px 0;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav-home {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .nav-home:hover {
+            text-decoration: underline;
+        }
+        .header {
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid #000;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            font-size: 16px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid #000;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .intro-box {
+            background: #f5f5f5;
+            padding: 30px;
+            border-left: 4px solid #000;
+            margin-bottom: 40px;
+        }
+        .feature {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+        .feature:last-child {
+            border-bottom: none;
+        }
+        .feature h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #000;
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #000;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hopfield Network Market Regimes</h1>
-    <p>Neural Physics Approach to Financial Market State Classification</p>
-    <p>Project page coming soon...</p>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="https://sakeeb91.github.io/" class="nav-home">← Back to Portfolio</a>
+            <span>Hopfield Market Regimes</span>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1>Hopfield Network Market Regimes</h1>
+            <p class="subtitle">Neural Physics Approach to Financial Market State Classification</p>
+            <div>
+                <a href="https://github.com/Sakeeb91/hopfield-market-regimes" class="btn" target="_blank">View Code</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="intro-box">
+                <h2>What is this project about?</h2>
+                <p>
+                    Financial markets behave like complex systems with distinct "moods" or regimes - sometimes they're calm and predictable, 
+                    other times they're volatile and chaotic. Imagine if you could teach a computer to recognize these different market states 
+                    the same way your brain recognizes faces or remembers patterns.
+                </p>
+                <br>
+                <p>
+                    This project uses Hopfield networks - a type of neural network inspired by how memory works in the brain - to identify and 
+                    classify different market regimes. It's like giving the computer a sophisticated pattern recognition system that can 
+                    "remember" what different market conditions look like and identify them in real-time.
+                </p>
+            </div>
+
+            <h2 class="section-title">The Market Regime Challenge</h2>
+            
+            <div class="feature">
+                <h3>What Are Market Regimes?</h3>
+                <p>
+                    Market regimes are distinct periods when markets behave in characteristically different ways. For example: 
+                    bull markets (rising prices), bear markets (falling prices), high volatility periods (lots of price swings), 
+                    or low volatility periods (stable prices). Each regime has different risk-return characteristics.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Why Traditional Methods Fall Short</h3>
+                <p>
+                    Most financial models assume markets behave consistently over time, but this simply isn't true. A strategy that works 
+                    in a bull market might be disastrous in a bear market. Traditional statistical methods often miss the complex, 
+                    non-linear patterns that characterize regime transitions.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>The Pattern Recognition Problem</h3>
+                <p>
+                    Market regimes don't announce themselves - they must be inferred from subtle patterns in price movements, 
+                    trading volumes, and other market indicators. This is exactly the kind of complex pattern recognition task 
+                    that neural networks excel at.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">How Hopfield Networks Work</h2>
+            
+            <div class="feature">
+                <h3>Inspired by Brain Memory</h3>
+                <p>
+                    Hopfield networks mimic how the brain stores and retrieves memories. Just as your brain can recognize a friend's face 
+                    even in poor lighting or from an unusual angle, Hopfield networks can recognize market patterns even when they're 
+                    noisy or incomplete. They store "memories" of different market states.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Content-Addressable Memory</h3>
+                <p>
+                    Unlike computer memory that requires exact addresses, Hopfield networks use content-addressable memory - 
+                    you can retrieve a complete memory from just a partial pattern. Show the network current market conditions, 
+                    and it will "remember" which historical regime it most resembles.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Energy Landscape Metaphor</h3>
+                <p>
+                    Think of market regimes as valleys in a mountainous landscape. The network's "energy" represents how well 
+                    current market conditions match known patterns. When the system finds a low-energy state (a valley), 
+                    it has identified a stable market regime.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Self-Organizing Classification</h3>
+                <p>
+                    The network doesn't need to be told what regimes exist - it discovers them automatically by finding 
+                    stable patterns in historical data. This unsupervised learning approach can reveal market regimes 
+                    that human analysts might miss.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Practical Applications</h2>
+            
+            <div class="feature">
+                <h3>Risk Management</h3>
+                <p>
+                    Different market regimes require different risk management strategies. During high volatility regimes, 
+                    you might reduce position sizes or increase hedging. During trending regimes, you might increase allocations 
+                    to momentum strategies. The system provides early warning of regime changes.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Portfolio Optimization</h3>
+                <p>
+                    Asset correlations change dramatically between regimes. What seems like a well-diversified portfolio in one regime 
+                    might be highly concentrated risk in another. Regime-aware portfolio optimization can adapt allocations 
+                    based on current market conditions.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Trading Strategy Selection</h3>
+                <p>
+                    Different trading strategies perform better in different regimes. Trend-following strategies excel in trending markets, 
+                    while mean-reversion strategies work better in range-bound markets. The system can automatically select 
+                    the most appropriate strategy for current conditions.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Stress Testing</h3>
+                <p>
+                    Traditional stress tests often miss the most dangerous scenarios - regime transitions. By understanding 
+                    how regimes evolve and interact, financial institutions can better prepare for the kinds of market shifts 
+                    that cause the most damage.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Innovation</h2>
+            
+            <div class="feature">
+                <h3>Multi-Scale Pattern Recognition</h3>
+                <p>
+                    The system analyzes patterns across multiple time scales simultaneously - from intraday movements to 
+                    long-term trends. This multi-scale approach captures both short-term volatility clustering and 
+                    long-term structural changes in market behavior.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Robust to Market Noise</h3>
+                <p>
+                    Financial data is notoriously noisy, with random fluctuations that can confuse pattern recognition systems. 
+                    The Hopfield network's attractor dynamics naturally filter out noise while preserving genuine regime signals, 
+                    making classifications more reliable.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Real-Time Processing</h3>
+                <p>
+                    Once trained, the network can classify market regimes in real-time as new data arrives. This speed is crucial 
+                    for practical trading applications where regime changes must be detected quickly to be actionable.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Interpretable Results</h3>
+                <p>
+                    Unlike black-box machine learning models, Hopfield networks provide interpretable results. You can examine 
+                    which market indicators are most important for regime classification and understand why the system 
+                    makes particular classifications.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Who Benefits?</h2>
+            
+            <div class="feature">
+                <h3>Institutional Investors</h3>
+                <p>
+                    Pension funds, endowments, and sovereign wealth funds managing billions of dollars need sophisticated tools 
+                    to navigate changing market conditions. Regime awareness can significantly improve long-term investment outcomes 
+                    and reduce drawdowns during market stress periods.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Hedge Funds & Trading Firms</h3>
+                <p>
+                    Professional traders can use regime information for strategy selection, position sizing, and risk management. 
+                    The system provides a quantitative foundation for tactical allocation decisions that are often made intuitively.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Risk Managers</h3>
+                <p>
+                    Understanding current market regimes is crucial for setting appropriate risk limits and stress test scenarios. 
+                    The system provides early warning of regime transitions that could invalidate existing risk models.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Financial Researchers</h3>
+                <p>
+                    Academics and quants studying market microstructure, behavioral finance, or systemic risk can use this tool 
+                    to better understand how markets evolve over time and identify previously unknown regime patterns.
+                </p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
