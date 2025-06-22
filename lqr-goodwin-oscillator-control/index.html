@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LQR Goodwin Oscillator Control - Optimal Feedback Control for Biological Systems</title>
+    <meta name="description" content="Advanced control engineering project demonstrating Linear Quadratic Regulator techniques for stabilizing pathological biological oscillations using the Goodwin circuit model.">
+    <meta name="keywords" content="LQR control, biological oscillators, Goodwin circuit, control systems, dynamical systems, nonlinear control, bioengineering">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sakeeb91.github.io/lqr-goodwin-oscillator-control/">
+    <meta property="og:title" content="LQR Goodwin Oscillator Control - Optimal Feedback Control for Biological Systems">
+    <meta property="og:description" content="Advanced control engineering demonstrating LQR stabilization of pathological biological oscillations">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sakeeb91.github.io/lqr-goodwin-oscillator-control/">
+    <meta property="twitter:title" content="LQR Goodwin Oscillator Control - Optimal Feedback Control for Biological Systems">
+    <meta property="twitter:description" content="Advanced control engineering demonstrating LQR stabilization of pathological biological oscillations">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            color: #000;
+            background-color: #fff;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .nav {
+            background: #fff;
+            border-bottom: 1px solid #000;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-home {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .nav-home:hover {
+            text-decoration: underline;
+        }
+
+        .nav-portfolio {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .nav-portfolio:hover {
+            text-decoration: underline;
+        }
+
+        .nav-project {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Header */
+        .header {
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid #000;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .badges {
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            margin: 0 10px 10px 0;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #000;
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+            border-bottom: 1px solid #000;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Features */
+        .feature {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .feature:last-child {
+            border-bottom: none;
+        }
+
+        .feature h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .feature p {
+            margin-bottom: 15px;
+        }
+
+        /* Mathematical Framework */
+        .math-section {
+            margin: 40px 0;
+        }
+
+        .math-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .equation {
+            font-family: 'Courier New', monospace;
+            background: #f5f5f5;
+            padding: 15px;
+            border-left: 3px solid #000;
+            margin: 20px 0;
+            white-space: pre-wrap;
+        }
+
+        /* Technical Grid */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tech-item {
+            border-left: 3px solid #000;
+            padding-left: 15px;
+        }
+
+        .tech-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        /* Results */
+        .results {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .result-image {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #000;
+            margin: 20px 0;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 80px 0;
+            text-align: center;
+            border-top: 1px solid #000;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-link {
+            color: #000;
+            text-decoration: underline;
+            margin: 0 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .btn {
+                display: block;
+                width: 200px;
+                margin: 10px auto;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="https://sakeeb91.github.io/" class="nav-portfolio">← BACK TO PORTFOLIO</a>
+            <a href="https://shafkatrahman.com/" class="nav-home">SHAFKAT RAHMAN</a>
+            <span class="nav-project">LQR GOODWIN OSCILLATOR CONTROL</span>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>LQR GOODWIN OSCILLATOR CONTROL</h1>
+            <p class="subtitle">Optimal Feedback Control for Pathological Biological Oscillations</p>
+            
+            <div class="badges">
+                <span class="badge">LQR OPTIMAL CONTROL</span><br>
+                <span class="badge">BIOLOGICAL CIRCUIT MODELING</span><br>
+                <span class="badge">NONLINEAR SYSTEM LINEARIZATION</span><br>
+                <span class="badge">ROBUST CONTROL DESIGN</span>
+            </div>
+
+            <div>
+                <a href="https://github.com/Sakeeb91/lqr-goodwin-oscillator-control" class="btn" target="_blank">VIEW CODE</a>
+                <a href="#features" class="btn">EXPLORE FEATURES</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mathematical Framework -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">GOODWIN OSCILLATOR DYNAMICS</h2>
+            
+            <div class="math-section">
+                <div class="math-title">NONLINEAR GOODWIN CIRCUIT MODEL</div>
+                <div class="equation">dX/dt = a/(A + Y^b) - k*X
+dY/dt = alpha*X - beta*Y
+
+Where:
+- X, Y = protein concentrations
+- a = maximum transcription rate
+- A = dissociation constant
+- b = Hill coefficient (nonlinearity parameter)
+- k = protein degradation rate
+- alpha, beta = translation/degradation rates</div>
+            </div>
+
+            <div class="math-section">
+                <div class="math-title">SYSTEM LINEARIZATION</div>
+                <div class="equation">δẋ = A*δx + B*δu
+
+A = [∂f/∂x |_(x₀,u₀)]  (Jacobian at equilibrium)
+B = [∂f/∂u |_(x₀,u₀)]  (Input matrix)
+
+Where:
+- δx = state deviation from equilibrium
+- δu = control input deviation
+- (x₀,u₀) = equilibrium operating point</div>
+            </div>
+
+            <div class="math-section">
+                <div class="math-title">LQR OPTIMAL CONTROL LAW</div>
+                <div class="equation">u*(t) = -K*x(t)
+
+K = R⁻¹*B^T*P
+
+Where P solves the Algebraic Riccati Equation:
+A^T*P + P*A - P*B*R⁻¹*B^T*P + Q = 0
+
+Cost Function: J = ∫₀^∞ (x^T*Q*x + u^T*R*u) dt</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features -->
+    <section class="section" id="features">
+        <div class="container">
+            <h2 class="section-title">CONTROL ENGINEERING CAPABILITIES</h2>
+            
+            <div class="feature">
+                <h3>BIOLOGICAL CIRCUIT MODELING</h3>
+                <p>
+                    Advanced mathematical modeling of the Goodwin biological oscillator circuit 
+                    representing gene regulatory networks with inherent nonlinear dynamics, 
+                    Hill-function nonlinearities, and natural oscillatory behavior characteristic 
+                    of circadian rhythms and cellular processes.
+                </p>
+            </div>
+            
+            <div class="feature">
+                <h3>NONLINEAR SYSTEM LINEARIZATION</h3>
+                <p>
+                    Systematic linearization of nonlinear biological dynamics around equilibrium 
+                    points using Jacobian matrix analysis. Transforms complex nonlinear differential 
+                    equations into linear state-space representation suitable for classical control 
+                    design methodologies.
+                </p>
+            </div>
+            
+            <div class="feature">
+                <h3>LQR OPTIMAL CONTROLLER DESIGN</h3>
+                <p>
+                    Linear Quadratic Regulator synthesis providing optimal feedback control law 
+                    that minimizes quadratic cost function balancing state regulation performance 
+                    and control effort. Solves Algebraic Riccati Equation for guaranteed stability 
+                    and optimality.
+                </p>
+            </div>
+            
+            <div class="feature">
+                <h3>ROBUST CONTROL PERFORMANCE</h3>
+                <p>
+                    Comprehensive analysis of controller robustness against parameter uncertainty, 
+                    measurement noise, and modeling errors. Demonstrates effective oscillation 
+                    suppression and stable regulation of pathological biological dynamics under 
+                    realistic operating conditions.
+                </p>
+            </div>
+            
+            <div class="feature">
+                <h3>SCIENTIFIC VISUALIZATION</h3>
+                <p>
+                    Publication-quality visualizations including phase portraits, time-series 
+                    analysis, control effort plots, and stability analysis. Interactive plots 
+                    demonstrating controller effectiveness in transforming oscillatory behavior 
+                    to stable equilibrium.
+                </p>
+            </div>
+            
+            <div class="feature">
+                <h3>THERAPEUTIC APPLICATIONS</h3>
+                <p>
+                    Real-world relevance for biomedical applications including circadian rhythm 
+                    disorders, pathological oscillations in metabolic networks, and synthetic 
+                    biology circuit stabilization. Framework applicable to drug delivery systems 
+                    and therapeutic interventions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">TECHNICAL SPECIFICATIONS</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-title">CONTROL METHOD</div>
+                    <div>Linear Quadratic Regulator (LQR)</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-title">SYSTEM TYPE</div>
+                    <div>Nonlinear Biological Oscillator</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-title">LINEARIZATION</div>
+                    <div>Jacobian-Based Equilibrium Analysis</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-title">OPTIMIZATION</div>
+                    <div>Algebraic Riccati Equation</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-title">STABILITY</div>
+                    <div>Guaranteed Asymptotic Stability</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-title">ROBUSTNESS</div>
+                    <div>Parameter Uncertainty Analysis</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-title">FRAMEWORK</div>
+                    <div>Python + NumPy + SciPy</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-title">VISUALIZATION</div>
+                    <div>Matplotlib + Interactive Plots</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/Sakeeb91/lqr-goodwin-oscillator-control" class="footer-link" target="_blank">GITHUB REPOSITORY</a>
+                <a href="https://github.com/Sakeeb91/lqr-goodwin-oscillator-control/blob/main/README.md" class="footer-link" target="_blank">DOCUMENTATION</a>
+                <a href="https://github.com/Sakeeb91/lqr-goodwin-oscillator-control/blob/master/goodwin_oscillator_control.py" class="footer-link" target="_blank">SOURCE CODE</a>
+                <a href="https://github.com/Sakeeb91/lqr-goodwin-oscillator-control/blob/master/lqr_controller.py" class="footer-link" target="_blank">LQR IMPLEMENTATION</a>
+            </div>
+            <p>Advanced control engineering for biological system stabilization and therapeutic applications.</p>
+            <p style="margin-top: 10px;">(c) 2025 LQR GOODWIN OSCILLATOR CONTROL PROJECT</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for smooth scrolling -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
