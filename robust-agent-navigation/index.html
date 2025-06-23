@@ -182,14 +182,25 @@
             </div>
 
             <div class="demo-section">
-                <h2>What the Agent Produces</h2>
-                <div class="intro-box">
+                <h2>See the Agent in Action</h2>
+                <!-- Try multiple URL formats for maximum compatibility -->
+                <img src="https://cdn.jsdelivr.net/gh/Sakeeb91/robust-agent-navigation@main/results/policy_animation.gif" 
+                     alt="Q-learning agent navigating through stochastic grid environment" 
+                     class="demo-gif"
+                     onerror="this.style.display='none'; document.getElementById('fallback-description').style.display='block';">
+                
+                <!-- Fallback content if image doesn't load -->
+                <div id="fallback-description" style="display: none;" class="intro-box">
                     <h3>🎬 Animated Learning Demo</h3>
                     <p>The project generates an animated GIF showing the agent learning optimal navigation strategies in real-time as it adapts to environmental uncertainty and finds efficient paths to the goal.</p>
                     
                     <h3>📊 Learning Analytics</h3>
                     <p>Comprehensive visualizations including reward curves, value heatmaps, policy comparisons, and exploration strategy evolution that demonstrate the learning process and algorithm effectiveness.</p>
                 </div>
+                
+                <p class="viz-caption">
+                    Q-learning agent adapting its navigation strategy in a stochastic environment
+                </p>
             </div>
 
             <h2 class="section-title">The Navigation Challenge</h2>
