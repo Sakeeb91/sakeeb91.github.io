@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robust Agent Navigation - Shafkat Rahman</title>
+    <meta name="description" content="Q-learning agent that learns optimal navigation in stochastic environments with uncertainty and obstacles">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            color: #000;
+            background-color: #fff;
+            font-size: 14px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav {
+            background: #fff;
+            border-bottom: 1px solid #000;
+            padding: 20px 0;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav-home {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .nav-home:hover {
+            text-decoration: underline;
+        }
+        .header {
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid #000;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            font-size: 16px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid #000;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .intro-box {
+            background: #f5f5f5;
+            padding: 30px;
+            border-left: 4px solid #000;
+            margin-bottom: 40px;
+        }
+        .feature {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+        .feature:last-child {
+            border-bottom: none;
+        }
+        .feature h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #000;
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="https://sakeeb91.github.io/" class="nav-home">← Back to Portfolio</a>
+            <span>Robust Agent Navigation</span>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1>Robust Agent Navigation</h1>
+            <p class="subtitle">Q-Learning Agent for Stochastic Environment Navigation</p>
+            <div>
+                <a href="https://github.com/Sakeeb91/robust-agent-navigation" class="btn" target="_blank">View Code</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="intro-box">
+                <h2>What is this project about?</h2>
+                <p>
+                    Imagine you're trying to navigate through a slippery ice rink to reach the other side, but every step you take 
+                    has a chance of sending you sliding in an unintended direction. How would you learn the safest and most efficient 
+                    path when you can't be sure your movements will go as planned?
+                </p>
+                <br>
+                <p>
+                    This project demonstrates how an AI agent learns to navigate through uncertain environments using Q-learning, 
+                    a fundamental reinforcement learning algorithm. The agent must find optimal paths to its goal while dealing with 
+                    movement uncertainty, obstacles, and hazards - just like navigating through real-world situations where things 
+                    don't always go according to plan.
+                </p>
+            </div>
+
+            <h2 class="section-title">The Navigation Challenge</h2>
+            
+            <div class="feature">
+                <h3>Stochastic Environment</h3>
+                <p>
+                    Unlike deterministic environments where actions always produce predictable outcomes, this agent operates in 
+                    a stochastic world. When it tries to move in one direction, there's only an 80-90% chance it will actually 
+                    go that way - the rest of the time, it might slip or drift in a different direction.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Learning Under Uncertainty</h3>
+                <p>
+                    The agent must learn to deal with this uncertainty by developing robust strategies. It can't just memorize 
+                    a fixed path - it needs to understand the probability distributions of its actions and adapt its policy 
+                    to handle the unpredictability of movement.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Obstacle Avoidance</h3>
+                <p>
+                    The environment contains obstacles and hazards that the agent must learn to avoid. Since movement is 
+                    uncertain, the agent must be extra careful near dangerous areas, developing conservative strategies 
+                    that account for the possibility of unintended movements.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">How Q-Learning Works</h2>
+            
+            <div class="feature">
+                <h3>Trial and Error Learning</h3>
+                <p>
+                    Q-learning is a model-free reinforcement learning algorithm where the agent learns by trying different actions 
+                    and observing their outcomes. Through repeated interactions with the environment, it builds up a "Q-table" 
+                    that estimates the value of taking each action in each state.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Exploration vs. Exploitation</h3>
+                <p>
+                    The agent uses an epsilon-greedy strategy to balance exploration (trying new actions to learn more about 
+                    the environment) with exploitation (using known good actions to maximize rewards). This balance is crucial 
+                    for finding optimal policies in uncertain environments.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Policy Adaptation</h3>
+                <p>
+                    As the agent learns, it continuously updates its policy based on new experiences. The algorithm handles 
+                    the stochastic nature of the environment by averaging outcomes over many trials, gradually converging 
+                    to robust navigation strategies.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            
+            <div class="feature">
+                <h3>Visual Learning Progress</h3>
+                <p>
+                    The project includes comprehensive visualization tools that show how the agent's performance improves over time. 
+                    Reward curves demonstrate learning progress, while policy heatmaps reveal the agent's preferred actions 
+                    in different states of the environment.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Customizable Environment</h3>
+                <p>
+                    The 6x6 grid environment can be easily modified to test different scenarios. You can adjust the slip probability, 
+                    add or remove obstacles, change reward structures, and experiment with different levels of environmental uncertainty 
+                    to see how the agent adapts.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Educational Implementation</h3>
+                <p>
+                    The code is written with clarity and educational value in mind. Each component is well-documented, making it 
+                    an excellent resource for understanding reinforcement learning concepts, Markov Decision Processes (MDPs), 
+                    and how to implement robust policies in practice.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Real-World Applications</h2>
+            
+            <div class="feature">
+                <h3>Robotics and Autonomous Systems</h3>
+                <p>
+                    The principles demonstrated here apply directly to robotics, where sensors are noisy and actuators are imprecise. 
+                    Autonomous vehicles, drones, and mobile robots all face similar challenges of navigating through uncertain 
+                    environments while avoiding obstacles.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Game AI and Simulation</h3>
+                <p>
+                    Game developers use similar techniques to create intelligent NPCs that can navigate complex environments and 
+                    adapt to changing conditions. The stochastic nature makes the AI behavior more realistic and challenging.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Operations Research</h3>
+                <p>
+                    Many real-world optimization problems involve uncertainty and risk management. The concepts of robust policy 
+                    development under uncertainty apply to supply chain management, resource allocation, and strategic planning.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Implementation</h2>
+            
+            <div class="feature">
+                <h3>Clean Python Implementation</h3>
+                <p>
+                    Built using Python with NumPy for efficient numerical computations and Matplotlib for visualization. 
+                    The code follows best practices for scientific computing and is structured for easy experimentation 
+                    and extension.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Modular Design</h3>
+                <p>
+                    The environment, agent, and visualization components are cleanly separated, making it easy to modify 
+                    individual parts without affecting the rest of the system. This modularity supports experimentation 
+                    with different algorithms and environment configurations.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Performance Analysis</h3>
+                <p>
+                    Includes tools for analyzing learning performance, convergence rates, and policy quality. These metrics 
+                    help understand how different parameters affect learning and provide insights into the algorithm's behavior 
+                    under various conditions.
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
