@@ -107,6 +107,36 @@
             background: #000;
             color: #fff;
         }
+        .demo-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .demo-gif {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #000;
+            margin: 20px 0;
+        }
+        .visualization-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .viz-item {
+            text-align: center;
+        }
+        .viz-image {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #000;
+            margin-bottom: 10px;
+        }
+        .viz-caption {
+            font-size: 12px;
+            font-style: italic;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -142,6 +172,16 @@
                     a fundamental reinforcement learning algorithm. The agent must find optimal paths to its goal while dealing with 
                     movement uncertainty, obstacles, and hazards - just like navigating through real-world situations where things 
                     don't always go according to plan.
+                </p>
+            </div>
+
+            <div class="demo-section">
+                <h2>See the Agent in Action</h2>
+                <img src="https://raw.githubusercontent.com/Sakeeb91/robust-agent-navigation/main/results/policy_animation.gif" 
+                     alt="Q-learning agent navigating through stochastic grid environment" 
+                     class="demo-gif">
+                <p class="viz-caption">
+                    Watch the agent learn optimal navigation strategies in a stochastic environment with obstacles and uncertainty
                 </p>
             </div>
 
@@ -269,6 +309,75 @@
                     Many real-world optimization problems involve uncertainty and risk management. The concepts of robust policy 
                     development under uncertainty apply to supply chain management, resource allocation, and strategic planning.
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Learning Results & Visualizations</h2>
+            
+            <div class="feature">
+                <h3>Learning Progress Analysis</h3>
+                <p>
+                    The project includes comprehensive visualization tools that demonstrate how the agent's performance 
+                    improves over time and adapts to different levels of environmental uncertainty.
+                </p>
+                
+                <div class="visualization-grid">
+                    <div class="viz-item">
+                        <img src="https://raw.githubusercontent.com/Sakeeb91/robust-agent-navigation/main/results/learning_curves.png" 
+                             alt="Learning curves showing reward and steps over training episodes" 
+                             class="viz-image">
+                        <p class="viz-caption">Learning curves showing reward accumulation and episode length over training</p>
+                    </div>
+                    
+                    <div class="viz-item">
+                        <img src="https://raw.githubusercontent.com/Sakeeb91/robust-agent-navigation/main/results/value_heatmap.png" 
+                             alt="Value heatmap showing learned state values" 
+                             class="viz-image">
+                        <p class="viz-caption">State value heatmap revealing the agent's understanding of environment rewards</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature">
+                <h3>Policy Adaptation Under Uncertainty</h3>
+                <p>
+                    One of the most interesting aspects of this project is how the agent adapts its navigation strategy 
+                    based on different levels of movement uncertainty (slip probability).
+                </p>
+                
+                <div class="visualization-grid">
+                    <div class="viz-item">
+                        <img src="https://raw.githubusercontent.com/Sakeeb91/robust-agent-navigation/main/results/optimal_policy.png" 
+                             alt="Optimal policy visualization showing preferred actions in each state" 
+                             class="viz-image">
+                        <p class="viz-caption">Optimal policy showing the agent's preferred actions for each grid position</p>
+                    </div>
+                    
+                    <div class="viz-item">
+                        <img src="https://raw.githubusercontent.com/Sakeeb91/robust-agent-navigation/main/results/policy_comparison.png" 
+                             alt="Policy comparison under different uncertainty levels" 
+                             class="viz-image">
+                        <p class="viz-caption">Policy comparison demonstrating adaptation to different uncertainty levels</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature">
+                <h3>Exploration Strategy Evolution</h3>
+                <p>
+                    The epsilon-greedy exploration strategy gradually shifts from exploration to exploitation as the agent 
+                    learns more about the environment, leading to more confident and efficient navigation.
+                </p>
+                
+                <div class="demo-section">
+                    <img src="https://raw.githubusercontent.com/Sakeeb91/robust-agent-navigation/main/results/epsilon_decay.png" 
+                         alt="Epsilon decay showing exploration strategy evolution" 
+                         class="viz-image" style="max-width: 500px;">
+                    <p class="viz-caption">Epsilon decay curve showing the transition from exploration to exploitation</p>
+                </div>
             </div>
         </div>
     </section>
