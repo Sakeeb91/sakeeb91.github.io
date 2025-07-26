@@ -1,0 +1,7 @@
+,filename,target,r2_score,rmse,mae,n_features,training_samples,test_samples,trained_date
+drag_gradient_boosting,drag_gradient_boosting_model.pkl,drag_coefficient_cd,0.2008678345866285,0.029221142252719063,0.022082856481014428,12,284,71,2025-07-26T11:42:32.559239
+drag_random_forest,drag_random_forest_model.pkl,drag_coefficient_cd,0.17833717700642904,0.029630208079813928,0.023205777256312392,12,284,71,2025-07-26T11:42:32.882036
+drag_ridge,drag_ridge_model.pkl,drag_coefficient_cd,0.1564967792995975,0.03002142172472591,0.02223935950851281,12,284,71,2025-07-26T11:42:32.888305
+lift_gradient_boosting,lift_gradient_boosting_model.pkl,lift_coefficient_cl,0.5028731407210525,0.21340755336214648,0.15665488169021682,10,284,71,2025-07-26T11:42:33.016678
+lift_random_forest,lift_random_forest_model.pkl,lift_coefficient_cl,0.4480762604673426,0.22486181402216537,0.17229481708251249,10,284,71,2025-07-26T11:42:33.297479
+lift_linear,lift_linear_model.pkl,lift_coefficient_cl,0.4710754736174957,0.22012685338860175,0.1692466782300306,10,284,71,2025-07-26T11:42:33.302412

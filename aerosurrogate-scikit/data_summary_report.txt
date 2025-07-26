@@ -1,0 +1,39 @@
+============================================================
+WINDSOR BODY CFD DATASET SUMMARY REPORT
+============================================================
+
+📊 DATASET DIMENSIONS:
+Geometric Parameters: 355 rows × 8 columns
+Force Coefficients: 355 rows × 5 columns
+
+🔍 DATA QUALITY:
+Missing values in geometric data: 0
+Missing values in force data: 0
+Duplicate rows in geometric data: 0
+Duplicate rows in force data: 0
+Run number consistency: ✅ PASS
+
+📋 GEOMETRIC PARAMETERS COLUMNS:
+  - run: int64
+  - ratio_length_back_fast: float64
+  - ratio_height_nose_windshield: float64
+  - ratio_height_fast_back: float64
+  - side_taper: float64
+  - clearance: float64
+  - bottom_taper_angle: float64
+  - frontal_area: float64
+
+📋 FORCE COEFFICIENTS COLUMNS:
+  - run: int64
+  - cd: float64
+  - cs: float64
+  - cl: float64
+  - cmy: float64
+
+📈 KEY STATISTICS:
+Ratio Length Back Fast: min=0.082, max=0.500, mean=0.307
+Frontal Area: min=0.112743, max=0.118786, mean=0.115706
+Drag Coefficient (Cd): min=0.229, max=0.505, mean=0.310
+Lift Coefficient (Cl): min=-0.570, max=0.932, mean=0.065
+
+============================================================

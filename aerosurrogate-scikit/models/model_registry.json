@@ -1,0 +1,37 @@
+{
+  "production_models": {
+    "drag_prediction": {
+      "best_model": "drag_gradient_boosting_model.pkl",
+      "preprocessor": "drag_preprocessor.pkl",
+      "performance": {
+        "r2": 0.2008678345866285,
+        "rmse": 0.029221142252719063
+      }
+    },
+    "lift_prediction": {
+      "best_model": "lift_gradient_boosting_model.pkl",
+      "preprocessor": "lift_preprocessor.pkl",
+      "performance": {
+        "r2": 0.5028731407210525,
+        "rmse": 0.21340755336214648
+      }
+    }
+  },
+  "alternative_models": {
+    "drag": [
+      "drag_random_forest_model.pkl",
+      "drag_ridge_model.pkl"
+    ],
+    "lift": [
+      "lift_random_forest_model.pkl",
+      "lift_linear_model.pkl"
+    ]
+  },
+  "last_updated": "2025-07-26T11:42:33.312447",
+  "dataset_info": {
+    "total_samples": 355,
+    "training_samples": 284,
+    "test_samples": 71,
+    "source": "Windsor body CFD simulations"
+  }
+}
