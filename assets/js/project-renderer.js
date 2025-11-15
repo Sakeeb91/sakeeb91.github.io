@@ -17,17 +17,18 @@
 
     function createProjectCard(project) {
         const card = el('article', 'project');
+        const body = el('div', 'project-body');
 
         if (Array.isArray(project.tags) && project.tags.length) {
             const meta = el('div', 'project-meta');
             project.tags.forEach(tag => {
                 meta.appendChild(el('span', '', tag));
             });
-            card.appendChild(meta);
+            body.appendChild(meta);
         }
 
-        card.appendChild(el('h3', 'project-title', project.title));
-        card.appendChild(el('p', 'project-subtitle', project.subtitle));
+        body.appendChild(el('h3', 'project-title', project.title));
+        body.appendChild(el('p', 'project-subtitle', project.subtitle));
 
         if (Array.isArray(project.highlights) && project.highlights.length) {
             const ul = el('ul', 'project-highlights');
@@ -39,8 +40,10 @@
                 li.appendChild(document.createTextNode(item.text));
                 ul.appendChild(li);
             });
-            card.appendChild(ul);
+            body.appendChild(ul);
         }
+
+        card.appendChild(body);
 
         if (Array.isArray(project.links) && project.links.length) {
             const links = el('div', 'project-links');

@@ -208,6 +208,17 @@
             flex-direction: column;
             min-height: 100%;
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+        }
+
+        .project-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            padding-right: 4px;
+            gap: var(--space-xxs);
         }
 
         .project-title {
@@ -512,6 +523,15 @@
 
             .hero-highlights span {
                 font-size: 0.75rem;
+            }
+
+            .project {
+                aspect-ratio: auto;
+                height: auto;
+            }
+
+            .project-body {
+                overflow: visible;
             }
         }
 
