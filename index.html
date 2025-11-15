@@ -207,23 +207,24 @@
 
         /* Projects Section */
         .projects {
-            padding: 80px 0;
-            border-top: 1px solid #000;
+            padding: var(--space-xl) 0;
+            border-top: 1px solid var(--border-subtle);
+            background: var(--color-bg);
         }
 
         .section-title {
-            font-size: 20px;
-            font-weight: bold;
+            font-size: clamp(1.5rem, 2vw, 1.9rem);
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: var(--space-lg);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 0.2em;
+            color: var(--color-text);
         }
 
         .project {
-            margin-bottom: 60px;
-            padding-bottom: 60px;
-            border-bottom: 1px solid #ccc;
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--border-subtle);
         }
 
         .project:last-child {
@@ -231,29 +232,40 @@
         }
 
         .project-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
             text-transform: uppercase;
+            letter-spacing: 0.15em;
         }
 
         .project-subtitle {
-            margin-bottom: 20px;
+            margin-bottom: var(--space-sm);
             font-style: italic;
+            color: var(--color-muted);
+            font-size: 0.98rem;
         }
 
         .project-description {
-            margin-bottom: 30px;
+            margin-bottom: var(--space-sm);
+            font-size: 1.02rem;
+            line-height: 1.8;
         }
 
         .project-links {
-            margin-top: 20px;
+            margin-top: var(--space-sm);
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
         }
 
         .project-links a {
-            color: #000;
-            text-decoration: underline;
-            margin-right: 20px;
+            color: var(--color-text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--color-text);
+            padding-bottom: 2px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
         }
 
         /* Blog Section */
