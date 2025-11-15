@@ -221,35 +221,75 @@
             color: var(--color-text);
         }
 
-        .project {
-            margin-bottom: var(--space-lg);
-            padding-bottom: var(--space-lg);
-            border-bottom: 1px solid var(--border-subtle);
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-md);
         }
 
-        .project:last-child {
-            border-bottom: none;
+        .project {
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: var(--space-md);
+            background: var(--color-surface);
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
         }
 
         .project-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: var(--space-xs);
+            font-size: 1.05rem;
+            margin-bottom: var(--space-xxs);
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.12em;
         }
 
         .project-subtitle {
-            margin-bottom: var(--space-sm);
-            font-style: italic;
+            margin-bottom: var(--space-xs);
             color: var(--color-muted);
-            font-size: 0.98rem;
+            font-size: 0.95rem;
         }
 
-        .project-description {
-            margin-bottom: var(--space-sm);
-            font-size: 1.02rem;
-            line-height: 1.8;
+        .project-meta {
+            display: flex;
+            gap: var(--space-xxs);
+            flex-wrap: wrap;
+            margin-bottom: var(--space-xs);
+        }
+
+        .project-meta span {
+            border: 1px solid var(--border-subtle);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+            background: var(--color-bg);
+        }
+
+        .project-highlights {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 var(--space-sm);
+            flex-grow: 1;
+        }
+
+        .project-highlights li {
+            margin-bottom: var(--space-xxs);
+            font-size: 0.96rem;
+            line-height: 1.6;
+        }
+
+        .project-highlights li span {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.78rem;
+            color: var(--color-muted);
+            display: inline-block;
+            margin-right: 8px;
         }
 
         .project-links {
@@ -534,6 +574,7 @@
     <section class="projects" id="projects">
         <div class="container">
             <h2 class="section-title">FEATURED PROJECTS</h2>
+            <div class="project-grid">
             
             <!-- Gradient-enhanced Physics-Informed Neural Network (gPINN) -->
             <div class="project">
@@ -735,6 +776,7 @@
                     <a href="https://sakeeb91.github.io/robust-agent-navigation/" target="_blank">VIEW PROJECT</a>
                     <a href="https://github.com/Sakeeb91/robust-agent-navigation" target="_blank">SOURCE CODE</a>
                 </div>
+            </div>
             </div>
         </div>
     </section>
