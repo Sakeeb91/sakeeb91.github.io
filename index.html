@@ -21,6 +21,10 @@
     <meta property="twitter:description" content="AI Consultant specializing in business process automation and practical AI implementation">
     <meta property="twitter:image" content="https://sakeeb91.github.io/assets/preview.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -28,18 +32,40 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --font-sans: 'Inter', 'Space Grotesk', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            --font-display: 'Space Grotesk', 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            --font-mono: 'Space Mono', 'Courier New', monospace;
+            --color-bg: #fcfcfb;
+            --color-surface: #ffffff;
+            --color-text: #111111;
+            --color-muted: #555555;
+            --border-strong: #111111;
+            --border-subtle: #e4e4e4;
+            --max-width: 960px;
+            --text-base: 16px;
+            --line-height-base: 1.7;
+            --space-xxl: 120px;
+            --space-xl: 96px;
+            --space-lg: 64px;
+            --space-md: 40px;
+            --space-sm: 24px;
+            --space-xs: 16px;
+            --space-xxs: 10px;
+        }
+
         body {
-            font-family: 'Courier New', monospace;
-            line-height: 1.6;
-            color: #000;
-            background-color: #fff;
-            font-size: 14px;
+            font-family: var(--font-sans);
+            line-height: var(--line-height-base);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            font-size: var(--text-base);
         }
 
         .container {
-            max-width: 800px;
+            max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 var(--space-sm);
         }
 
         /* Navigation */
