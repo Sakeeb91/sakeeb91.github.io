@@ -407,26 +407,42 @@
 
         /* Contact Section */
         .contact {
-            padding: 80px 0;
-            border-top: 1px solid #000;
+            padding: var(--space-xl) 0;
+            border-top: 1px solid var(--border-subtle);
             text-align: center;
+            background: var(--color-bg);
         }
 
         .contact-links {
-            margin-top: 40px;
+            margin-top: var(--space-md);
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
         }
 
         .contact-links a {
-            color: #000;
-            text-decoration: underline;
-            margin: 0 20px;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            border-bottom: 1px solid var(--color-text);
+            padding-bottom: 4px;
+        }
+
+        .contact .btn {
+            margin-top: var(--space-md);
         }
 
         /* Footer */
         .footer {
-            border-top: 1px solid #000;
-            padding: 40px 0;
+            border-top: 1px solid var(--border-subtle);
+            padding: var(--space-md) 0 var(--space-lg);
             text-align: center;
+            background: var(--color-surface);
+            font-size: 0.85rem;
+            color: var(--color-muted);
         }
 
         /* Responsive */
@@ -440,11 +456,40 @@
             }
             
             .hero h1 {
-                font-size: 20px;
+                font-size: 1.8rem;
+                letter-spacing: 0.18em;
+            }
+
+            .subtitle {
+                letter-spacing: 0.08em;
+            }
+
+            .description {
+                font-size: 0.95rem;
+            }
+
+            .project-links {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-links {
+                flex-direction: column;
             }
             
             .container {
-                padding: 0 15px;
+                padding: 0 var(--space-xs);
+            }
+
+            .hero-highlights span {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            :root {
+                --text-base: 17px;
+                --max-width: 1100px;
             }
         }
     </style>
