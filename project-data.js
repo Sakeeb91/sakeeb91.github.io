@@ -10,7 +10,7 @@ window.PROJECTS = [
       { label: "Stack", text: "React + TypeScript + Vite deployed on Cloudflare Pages with global CDN." }
     ],
     links: [
-      { label: "Live demo", url: "https://ca2a31fb.cacao-sommelier.pages.dev" },
+      { label: "Live demo", url: "https://cacao-sommelier.pages.dev" },
       { label: "Source code", url: "https://github.com/Sakeeb91/cacao-sommelier" },
       { label: "View project", url: "https://sakeeb91.github.io/cacao-sommelier/" }
     ]
