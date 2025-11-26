@@ -11,71 +11,224 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&family=Space+Mono:wght@400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/main.css">
     <style>
+        :root {
+            --color-cocoa-900: #3e2723;
+            --color-cocoa-800: #5d4037;
+            --color-gold-500: #c5a028;
+            --color-cream-50: #fdf8f6;
+        }
+
+        body {
+            background-color: var(--color-cream-50);
+            color: var(--color-cocoa-900);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
         .project-hero {
-            background: linear-gradient(135deg, #3e2723 0%, #5d4037 100%);
+            background: linear-gradient(135deg, var(--color-cocoa-900) 0%, var(--color-cocoa-800) 100%);
             color: white;
-            padding: 4rem 0;
+            padding: 6rem 0 4rem;
             margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(197, 160, 40, 0.15) 0%, transparent 50%);
+        }
+
+        .project-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .project-hero .subtitle {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         .project-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 3rem 1rem;
+            max-width: 1000px;
+            margin: -3rem auto 0;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(62, 39, 35, 0.08);
+            position: relative;
+            z-index: 10;
+        }
+
+        .project-intro {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--color-cocoa-800);
+            margin-bottom: 2rem;
+        }
+
+        .browser-frame {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            margin: 3rem 0;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .browser-header {
+            background: #f1f1f1;
+            padding: 12px 16px;
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot.red {
+            background: #ff5f56;
+        }
+
+        .dot.yellow {
+            background: #ffbd2e;
+        }
+
+        .dot.green {
+            background: #27c93f;
         }
 
         .project-image {
             width: 100%;
-            border-radius: 8px;
-            margin: 2rem 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            display: block;
         }
 
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .tech-tag {
-            background: #f0f0f0;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .feature-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .feature-list li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .feature-list li:before {
-            content: "✓ ";
-            color: #5d4037;
-            font-weight: bold;
-            margin-right: 0.5rem;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             margin: 2rem 0;
         }
 
-        .project-links .btn {
-            flex: 1;
+        .tech-tag {
+            background: white;
+            border: 1px solid rgba(62, 39, 35, 0.1);
+            color: var(--color-cocoa-900);
+            padding: 0.5rem 1.25rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: var(--color-cocoa-900);
+            color: white;
+            border-color: var(--color-cocoa-900);
+            transform: translateY(-2px);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(62, 39, 35, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(62, 39, 35, 0.05);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            color: var(--color-gold-500);
+            font-size: 1.25rem;
+        }
+
+        .project-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--color-cocoa-900);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
             text-align: center;
+            transition: all 0.3s ease;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        .btn:hover {
+            background: var(--color-gold-500);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(197, 160, 40, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--color-cocoa-900);
+            color: var(--color-cocoa-900);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-cocoa-900);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .project-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .project-content {
+                padding: 1.5rem;
+                margin-top: -2rem;
+            }
+
+            .project-links {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -102,81 +255,92 @@
     </section>
 
     <div class="project-content">
-        <h2>Overview</h2>
-        <p>
-            A modern, premium chocolate e-commerce website that combines elegant design with cutting-edge AI features.
-            Built with React and TypeScript, the site showcases a sophisticated user experience with glassmorphism
-            effects,
-            smooth animations, and AI-powered functionality powered by Google's Gemini API.
-        </p>
+        <div class="project-intro">
+            <p>
+                A modern, premium chocolate e-commerce website that combines elegant design with cutting-edge AI
+                features.
+                Built with React and TypeScript, the site showcases a sophisticated user experience with glassmorphism
+                effects, smooth animations, and AI-powered functionality powered by Google's Gemini API.
+            </p>
+        </div>
 
         <div class="project-links">
-            <a href="https://ca2a31fb.cacao-sommelier.pages.dev" target="_blank" class="btn">Live Demo</a>
-            <a href="https://github.com/Sakeeb91/cacao-sommelier" target="_blank" class="btn">Source Code</a>
+            <a href="https://ca2a31fb.cacao-sommelier.pages.dev" target="_blank" class="btn">View Live Demo</a>
+            <a href="https://github.com/Sakeeb91/cacao-sommelier" target="_blank" class="btn btn-outline">View Source
+                Code</a>
         </div>
 
         <h2>Technology Stack</h2>
         <div class="tech-stack">
-            <span class="tech-tag">React</span>
+            <span class="tech-tag">React 18</span>
             <span class="tech-tag">TypeScript</span>
             <span class="tech-tag">Vite</span>
             <span class="tech-tag">Tailwind CSS</span>
             <span class="tech-tag">Google Gemini API</span>
             <span class="tech-tag">Cloudflare Pages</span>
+            <span class="tech-tag">Framer Motion</span>
         </div>
 
+        <div class="browser-frame">
+            <div class="browser-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <img src="images/hero.png" alt="Cacao website hero section" class="project-image">
+        </div>
+        <p style="text-align: center; color: #666; font-style: italic; margin-top: -2rem; margin-bottom: 3rem;">
+            The landing page features a striking hero section with "The Physics of Pleasure" tagline.
+        </p>
+
         <h2>Key Features</h2>
-        <ul class="feature-list">
-            <li><strong>AI-Powered Pairing Suggestions:</strong> Gemini API generates sophisticated chocolate pairing
-                recommendations with search grounding</li>
-            <li><strong>Text-to-Speech Tasting Notes:</strong> Audio generation for immersive sensory descriptions</li>
-            <li><strong>Dynamic Image Generation:</strong> AI-generated product imagery using Gemini Flash Image model
-            </li>
-            <li><strong>Modern Glassmorphism UI:</strong> Premium design with backdrop blur effects and smooth
-                animations</li>
-            <li><strong>Responsive Design:</strong> Fully responsive layout optimized for all devices</li>
-            <li><strong>Global CDN Deployment:</strong> Hosted on Cloudflare Pages for maximum performance</li>
-        </ul>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>AI Pairing Sommelier</h3>
+                <p>Gemini API generates sophisticated chocolate pairing recommendations with search grounding, offering
+                    expert advice for any food or drink.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Sensory Audio Guides</h3>
+                <p>Text-to-speech generation creates immersive tasting notes, guiding users through the flavor profile
+                    of each chocolate.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Dynamic Imagery</h3>
+                <p>AI-generated product imagery using Gemini Flash Image model creates unique, high-quality visuals for
+                    the shopping experience.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Glassmorphism UI</h3>
+                <p>Premium design aesthetic with backdrop blur effects, smooth transitions, and a sophisticated color
+                    palette.</p>
+            </div>
+        </div>
 
-        <h2>Screenshots</h2>
-
-        <h3>Hero Section</h3>
-        <img src="images/hero.png" alt="Cacao website hero section" class="project-image">
-        <p><em>The landing page features a striking hero section with "The Physics of Pleasure" tagline, showcasing
-                premium chocolate imagery and interactive elements.</em></p>
-
-        <h3>Full Website View</h3>
-        <img src="images/full-page.png" alt="Cacao website full page view" class="project-image">
-        <p><em>Complete website view showing the Origins, Process, Shop, and other sections with consistent design
-                language throughout.</em></p>
+        <div class="browser-frame">
+            <div class="browser-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <img src="images/full-page.png" alt="Cacao website full page view" class="project-image">
+        </div>
 
         <h2>Technical Highlights</h2>
         <ul class="feature-list">
-            <li><strong>Performance:</strong> Built with Vite for lightning-fast development and optimized production
-                builds</li>
-            <li><strong>Type Safety:</strong> Full TypeScript implementation for robust code quality</li>
-            <li><strong>API Integration:</strong> Secure environment variable handling for Gemini API key</li>
-            <li><strong>Deployment:</strong> Automated CI/CD pipeline with GitHub integration</li>
-            <li><strong>SEO Optimized:</strong> Proper meta tags, semantic HTML, and performance optimization</li>
+            <li><strong>Performance First:</strong> Built with Vite for lightning-fast development and optimized
+                production builds with code splitting.</li>
+            <li><strong>Type Safety:</strong> Comprehensive TypeScript implementation ensuring robust code quality and
+                developer experience.</li>
+            <li><strong>Secure Architecture:</strong> Environment variable handling for API keys and secure deployment
+                practices.</li>
+            <li><strong>CI/CD Pipeline:</strong> Automated deployment to Cloudflare Pages via GitHub actions/webhooks.
+            </li>
         </ul>
 
-        <h2>Development Process</h2>
-        <p>
-            This project involved fixing critical rendering issues, implementing graceful error handling for API
-            failures,
-            and deploying to Cloudflare Pages via CLI. The development process included:
-        </p>
-        <ul class="feature-list">
-            <li>Debugging and fixing React rendering issues</li>
-            <li>Implementing conditional API initialization to prevent crashes</li>
-            <li>Setting up environment variables for secure API key management</li>
-            <li>Configuring Cloudflare Pages deployment with Wrangler CLI</li>
-            <li>Optimizing build process and bundle size</li>
-        </ul>
-
-        <div class="project-links">
-            <a href="https://ca2a31fb.cacao-sommelier.pages.dev" target="_blank" class="btn">View Live Site</a>
-            <a href="../projects.html" class="btn">Back to Projects</a>
+        <div style="margin-top: 4rem; text-align: center;">
+            <a href="../projects.html" class="btn btn-outline"
+                style="display: inline-block; width: auto; padding: 1rem 3rem;">Back to All Projects</a>
         </div>
     </div>
 
