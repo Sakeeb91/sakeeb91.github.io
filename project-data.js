@@ -1,5 +1,21 @@
 window.PROJECTS = [
   {
+    slug: "cacao-sommelier",
+    title: "Cacao. | Modern Chocolatier",
+    subtitle: "Premium chocolate e-commerce with AI-powered features",
+    tags: ["Web Dev", "AI Integration"],
+    highlights: [
+      { label: "AI Features", text: "Gemini-powered pairing suggestions, text-to-speech tasting notes, and dynamic image generation." },
+      { label: "Design", text: "Modern glassmorphism UI with smooth animations and responsive layouts." },
+      { label: "Stack", text: "React + TypeScript + Vite deployed on Cloudflare Pages with global CDN." }
+    ],
+    links: [
+      { label: "Live demo", url: "https://ca2a31fb.cacao-sommelier.pages.dev" },
+      { label: "Source code", url: "https://github.com/Sakeeb91/cacao-sommelier" },
+      { label: "View project", url: "https://sakeeb91.github.io/cacao-sommelier/" }
+    ]
+  },
+  {
     slug: "gpinn",
     title: "Gradient-Enhanced Physics-Informed Neural Network (gPINN)",
     subtitle: "Inverse modeling for porous media with uncertainty bounds",

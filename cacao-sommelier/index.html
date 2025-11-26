@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cacao. | Modern Chocolatier - Shafkat Rahman</title>
+    <meta name="description"
+        content="Premium chocolate e-commerce website with AI-powered features including pairing suggestions, text-to-speech tasting notes, and dynamic image generation.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&family=Space+Mono:wght@400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .project-hero {
+            background: linear-gradient(135deg, #3e2723 0%, #5d4037 100%);
+            color: white;
+            padding: 4rem 0;
+            margin-top: 60px;
+        }
+
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .project-image {
+            width: 100%;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-tag {
+            background: #f0f0f0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .feature-list li:before {
+            content: "✓ ";
+            color: #5d4037;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .project-links .btn {
+            flex: 1;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">SHAFKAT RAHMAN</a>
+            <ul class="nav-links">
+                <li><a href="../about.html">ABOUT ME</a></li>
+                <li><a href="../projects.html">PROJECTS</a></li>
+                <li><a href="../index.html#blog">BLOG</a></li>
+                <li><a href="../index.html#skills">SKILLS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <h1>Cacao. | Modern Chocolatier</h1>
+            <p class="subtitle">Premium chocolate e-commerce with AI-powered features</p>
+        </div>
+    </section>
+
+    <div class="project-content">
+        <h2>Overview</h2>
+        <p>
+            A modern, premium chocolate e-commerce website that combines elegant design with cutting-edge AI features.
+            Built with React and TypeScript, the site showcases a sophisticated user experience with glassmorphism
+            effects,
+            smooth animations, and AI-powered functionality powered by Google's Gemini API.
+        </p>
+
+        <div class="project-links">
+            <a href="https://ca2a31fb.cacao-sommelier.pages.dev" target="_blank" class="btn">Live Demo</a>
+            <a href="https://github.com/Sakeeb91/cacao-sommelier" target="_blank" class="btn">Source Code</a>
+        </div>
+
+        <h2>Technology Stack</h2>
+        <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">Google Gemini API</span>
+            <span class="tech-tag">Cloudflare Pages</span>
+        </div>
+
+        <h2>Key Features</h2>
+        <ul class="feature-list">
+            <li><strong>AI-Powered Pairing Suggestions:</strong> Gemini API generates sophisticated chocolate pairing
+                recommendations with search grounding</li>
+            <li><strong>Text-to-Speech Tasting Notes:</strong> Audio generation for immersive sensory descriptions</li>
+            <li><strong>Dynamic Image Generation:</strong> AI-generated product imagery using Gemini Flash Image model
+            </li>
+            <li><strong>Modern Glassmorphism UI:</strong> Premium design with backdrop blur effects and smooth
+                animations</li>
+            <li><strong>Responsive Design:</strong> Fully responsive layout optimized for all devices</li>
+            <li><strong>Global CDN Deployment:</strong> Hosted on Cloudflare Pages for maximum performance</li>
+        </ul>
+
+        <h2>Screenshots</h2>
+
+        <h3>Hero Section</h3>
+        <img src="images/hero.png" alt="Cacao website hero section" class="project-image">
+        <p><em>The landing page features a striking hero section with "The Physics of Pleasure" tagline, showcasing
+                premium chocolate imagery and interactive elements.</em></p>
+
+        <h3>Full Website View</h3>
+        <img src="images/full-page.png" alt="Cacao website full page view" class="project-image">
+        <p><em>Complete website view showing the Origins, Process, Shop, and other sections with consistent design
+                language throughout.</em></p>
+
+        <h2>Technical Highlights</h2>
+        <ul class="feature-list">
+            <li><strong>Performance:</strong> Built with Vite for lightning-fast development and optimized production
+                builds</li>
+            <li><strong>Type Safety:</strong> Full TypeScript implementation for robust code quality</li>
+            <li><strong>API Integration:</strong> Secure environment variable handling for Gemini API key</li>
+            <li><strong>Deployment:</strong> Automated CI/CD pipeline with GitHub integration</li>
+            <li><strong>SEO Optimized:</strong> Proper meta tags, semantic HTML, and performance optimization</li>
+        </ul>
+
+        <h2>Development Process</h2>
+        <p>
+            This project involved fixing critical rendering issues, implementing graceful error handling for API
+            failures,
+            and deploying to Cloudflare Pages via CLI. The development process included:
+        </p>
+        <ul class="feature-list">
+            <li>Debugging and fixing React rendering issues</li>
+            <li>Implementing conditional API initialization to prevent crashes</li>
+            <li>Setting up environment variables for secure API key management</li>
+            <li>Configuring Cloudflare Pages deployment with Wrangler CLI</li>
+            <li>Optimizing build process and bundle size</li>
+        </ul>
+
+        <div class="project-links">
+            <a href="https://ca2a31fb.cacao-sommelier.pages.dev" target="_blank" class="btn">View Live Site</a>
+            <a href="../projects.html" class="btn">Back to Projects</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 SHAFKAT RAHMAN.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
