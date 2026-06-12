@@ -126,6 +126,12 @@
     background:radial-gradient(70% 70% at 50% 45%,color-mix(in oklab,var(--accent) 26%,transparent),transparent 70%);
     opacity:.5}
   .plate img{position:relative;z-index:1;width:100%;aspect-ratio:1/1;object-fit:cover}
+  .plate video.orbit{position:relative;z-index:1;width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#000}
+  .plate .spin{position:absolute;z-index:2;right:.7rem;bottom:.7rem;font-family:var(--mono);
+    font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+    background:color-mix(in oklab,#000 55%,transparent);padding:.28rem .5rem;border-radius:2px;
+    opacity:.85;pointer-events:none}
+  @media (prefers-reduced-motion:reduce){.plate .spin{display:none}}
   figcaption{font-family:var(--mono);font-size:.74rem;color:var(--faint);margin-top:.85rem;letter-spacing:.03em}
 
   .chap-grid{display:grid;gap:clamp(2rem,4vw,3.5rem);align-items:center}
@@ -224,8 +230,14 @@
       </div>
       <div class="chap-grid split">
         <div class="col-media reveal">
-          <figure class="plate"><img src="img/aurelia.jpg" alt="The Aurelia attractor: a luminous gold bell of nested filaments with three-fold rotational symmetry, on black." loading="lazy" width="1600" height="1600"></figure>
-          <figcaption>Aurelia, three-quarter view. 1,000,000 orbit points.</figcaption>
+          <figure class="plate">
+            <video class="orbit" poster="img/aurelia.jpg" muted loop playsinline preload="none" width="600" height="600" aria-label="The Aurelia attractor rotating through one full turn: a gold three-fold bell of nested filaments on black.">
+              <source data-src="vid/aurelia_orbit.webm" type="video/webm">
+              <source data-src="vid/aurelia_orbit.mp4" type="video/mp4">
+            </video>
+            <span class="spin" aria-hidden="true">rotating</span>
+          </figure>
+          <figcaption>Aurelia, one full turn. Gold, three-fold.</figcaption>
         </div>
         <div class="col-text reveal">
           <dl class="specs">
@@ -251,8 +263,14 @@
       </div>
       <div class="chap-grid split flip">
         <div class="col-media reveal">
-          <figure class="plate"><img src="img/naiad.jpg" alt="The Naiad attractor: a cyan double-lobed jet with two-fold symmetry, like water arcing from a fountain, on black." loading="lazy" width="1600" height="1600"></figure>
-          <figcaption>Naiad, the fountain. Two lobes exchanged by a half-turn.</figcaption>
+          <figure class="plate">
+            <video class="orbit" poster="img/naiad.jpg" muted loop playsinline preload="none" width="600" height="600" aria-label="The Naiad attractor rotating through one full turn: a cyan double-lobed jet on black.">
+              <source data-src="vid/naiad_orbit.webm" type="video/webm">
+              <source data-src="vid/naiad_orbit.mp4" type="video/mp4">
+            </video>
+            <span class="spin" aria-hidden="true">rotating</span>
+          </figure>
+          <figcaption>Naiad, one full turn. Two lobes exchanged by a half-turn.</figcaption>
         </div>
         <div class="col-text reveal">
           <dl class="specs">
@@ -278,8 +296,14 @@
       </div>
       <div class="chap-grid split">
         <div class="col-media reveal">
-          <figure class="plate"><img src="img/cassiopea.jpg" alt="The Cassiopea attractor: an emerald four-armed star with four-fold rotational symmetry, on black." loading="lazy" width="1600" height="1600"></figure>
-          <figcaption>Cassiopea, viewed down the axis. A four-armed pinwheel.</figcaption>
+          <figure class="plate">
+            <video class="orbit" poster="img/cassiopea.jpg" muted loop playsinline preload="none" width="600" height="600" aria-label="The Cassiopea attractor rotating through one full turn: an emerald four-fold bell on black.">
+              <source data-src="vid/cassiopea_orbit.webm" type="video/webm">
+              <source data-src="vid/cassiopea_orbit.mp4" type="video/mp4">
+            </video>
+            <span class="spin" aria-hidden="true">rotating</span>
+          </figure>
+          <figcaption>Cassiopea, one full turn. The four-fold member.</figcaption>
         </div>
         <div class="col-text reveal">
           <dl class="specs">
@@ -312,8 +336,14 @@
       </div>
       <div class="chap-grid split flip" style="margin-top:3rem">
         <div class="col-media reveal">
-          <figure class="plate"><img src="img/mobula_alt.jpg" alt="Mobula seen from above: a four-armed pinwheel wound around a central vortex." loading="lazy" width="1280" height="1280"></figure>
-          <figcaption>From above, a four-fold pinwheel around a vortex.</figcaption>
+          <figure class="plate">
+            <video class="orbit" poster="img/mobula_alt.jpg" muted loop playsinline preload="none" width="600" height="600" aria-label="The Mobula attractor rotating through one full turn: a violet-rose rotoreflection form on black.">
+              <source data-src="vid/mobula_orbit.webm" type="video/webm">
+              <source data-src="vid/mobula_orbit.mp4" type="video/mp4">
+            </video>
+            <span class="spin" aria-hidden="true">rotating</span>
+          </figure>
+          <figcaption>Mobula, one full turn. The spin and the flip, made visible.</figcaption>
         </div>
         <div class="col-text reveal">
           <dl class="specs">
@@ -430,6 +460,34 @@
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
   els.forEach(function(el){ io.observe(el); });
+})();
+
+/* Rotation videos: load + play only when in view. Reduced motion keeps the poster still. */
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vids = Array.prototype.slice.call(document.querySelectorAll('video.orbit'));
+  if (reduce) {
+    vids.forEach(function(v){
+      var sp = v.parentNode.querySelector('.spin'); if (sp) sp.remove();
+    });
+    return; // posters (static renders) remain; no motion
+  }
+  function activate(v){
+    if (v.dataset.loaded) return;
+    v.dataset.loaded = '1';
+    v.querySelectorAll('source[data-src]').forEach(function(s){ s.src = s.getAttribute('data-src'); });
+    v.load();
+    var p = v.play(); if (p && p.catch) p.catch(function(){});
+  }
+  if (!('IntersectionObserver' in window)) { vids.forEach(activate); return; }
+  var vio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      var v = e.target;
+      if (e.isIntersecting) { activate(v); if (v.paused) { var p=v.play(); if(p&&p.catch)p.catch(function(){}); } }
+      else if (v.dataset.loaded && !v.paused) { v.pause(); }
+    });
+  }, { rootMargin: '120px 0px 120px 0px', threshold: 0.2 });
+  vids.forEach(function(v){ vio.observe(v); });
 })();
 </script>
 </body>
