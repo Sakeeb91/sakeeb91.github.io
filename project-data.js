@@ -1,5 +1,21 @@
 window.PROJECTS = [
   {
+    slug: "attractors",
+    title: "The Attractor Atlas",
+    subtitle: "Strange attractors ordered by symmetry, and the law of how much chaos a symmetry permits",
+    tags: ["Chaos / Dynamical Systems", "Scientific Computing"],
+    highlights: [
+      { label: "Specimens", text: "Four certified chaotic flows named for sea creatures (Aurelia C3, Naiad C2, Cassiopea C4, Mobula S4), each found by a quality-diversity search and certified for bounded chaos." },
+      { label: "The finding", text: "A matched-budget chaos-vs-symmetry-group law: cyclic and rotoreflection groups host chaos non-monotonically, while the polyhedral groups fall off an irreducibility cliff to zero." },
+      { label: "The wall", text: "Tetrahedral, octahedral, and icosahedral flows act irreducibly on R^3, so by Schur there is no saddle-focus engine: strong numerical evidence for why polyhedral chaotic flows do not exist." }
+    ],
+    links: [
+      { label: "View gallery", url: "https://sakeeb91.github.io/attractors/" },
+      { label: "Live viewer", url: "https://sakeeb91.github.io/attractor-atlas/" },
+      { label: "Source code", url: "https://github.com/Sakeeb91/attractor-atlas" }
+    ]
+  },
+  {
     slug: "cacao-sommelier",
     title: "Cacao. | Modern Chocolatier",
     subtitle: "Premium chocolate e-commerce with AI-powered features",

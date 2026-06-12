@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Attractor Atlas · strange attractors ordered by symmetry</title>
+<meta name="description" content="Four certified strange attractors named after sea creatures, the quality-diversity engine that found them, and a law of how much chaos a symmetry will permit, including the wall the polyhedral groups put up.">
+<meta name="author" content="Shafkat Rahman">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://sakeeb91.github.io/attractors/">
+<meta property="og:title" content="The Attractor Atlas">
+<meta property="og:description" content="Strange attractors ordered by symmetry: four certified specimens, a quality-diversity search engine, and the irreducibility cliff.">
+<meta property="og:image" content="https://sakeeb91.github.io/attractors/img/mobula.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Attractor Atlas">
+<meta name="twitter:description" content="Strange attractors ordered by symmetry, and the law of how much chaos a symmetry permits.">
+<meta name="twitter:image" content="https://sakeeb91.github.io/attractors/img/mobula.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Spectral:ital,wght@0,400;0,500;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#060609;
+    --bg-soft:#0c0c12;
+    --ink:#ECECF2;
+    --body:#c8c8d4;
+    --muted:#8d8d9d;
+    --faint:#62626f;
+    --line:rgba(255,255,255,.10);
+    --line-soft:rgba(255,255,255,.06);
+
+    --aurelia:#f3b13e;
+    --naiad:#46cfe6;
+    --cassiopea:#38d39f;
+    --mobula:#e0559b;
+    --law:#e2574b;
+
+    --accent:var(--naiad);
+
+    --serif:"Spectral",Georgia,serif;
+    --display:"Space Grotesk",system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+
+    --measure:66ch;
+    --pad:clamp(1.25rem,5vw,3rem);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    margin:0;background:var(--bg);color:var(--body);
+    font-family:var(--serif);font-size:clamp(1.02rem,.55vw + .92rem,1.18rem);
+    line-height:1.72;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:var(--display);color:var(--ink);font-weight:600;line-height:1.04;letter-spacing:-.02em;text-wrap:balance}
+  p{text-wrap:pretty}
+  a{color:var(--accent);text-decoration:none;transition:color .25s}
+  a:hover{color:var(--ink)}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--accent);color:#06060a}
+
+  .skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#000;padding:.6rem 1rem;z-index:100}
+  .skip:focus{left:1rem;top:1rem}
+
+  .wrap{max-width:1180px;margin-inline:auto;padding-inline:var(--pad)}
+  .prose{max-width:var(--measure)}
+  .prose p + p{margin-top:1.1em}
+  .prose p{color:var(--body)}
+
+  /* ---- top bar ---- */
+  .bar{position:sticky;top:0;z-index:40;backdrop-filter:blur(10px);
+    background:color-mix(in oklab,var(--bg) 78%,transparent);
+    border-bottom:1px solid var(--line-soft)}
+  .bar-in{max-width:1180px;margin-inline:auto;padding:.85rem var(--pad);
+    display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;color:var(--ink);text-transform:uppercase}
+  .barnav{display:flex;gap:1.35rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+  .barnav a{color:var(--muted)}
+  .barnav a:hover{color:var(--ink)}
+  @media(max-width:760px){.barnav{display:none}}
+
+  /* ---- hero ---- */
+  .hero{position:relative;min-height:92svh;display:flex;align-items:center;
+    border-bottom:1px solid var(--line-soft);overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:#000;}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.5;filter:blur(2px) saturate(115%);
+    transform:scale(1.06)}
+  .hero-bg::after{content:"";position:absolute;inset:0;
+    background:radial-gradient(120% 90% at 50% 30%,transparent 0%,var(--bg) 78%),
+               linear-gradient(180deg,color-mix(in oklab,var(--bg) 55%,transparent),var(--bg))}
+  .hero-in{position:relative;padding-block:clamp(4rem,12vh,8rem)}
+  .kicker{font-family:var(--mono);font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:0 0 1.4rem}
+  .hero h1{font-size:clamp(2.7rem,8vw,5.6rem);font-weight:700;margin:0;color:var(--ink)}
+  .hero .lede{font-size:clamp(1.15rem,1.4vw + .9rem,1.5rem);color:var(--body);max-width:40ch;margin:1.6rem 0 0;line-height:1.5}
+  .hero .meta{font-family:var(--mono);font-size:.78rem;color:var(--faint);margin-top:2.2rem;letter-spacing:.04em}
+  .hero-links{display:flex;gap:1.5rem;margin-top:2rem;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;
+    padding:.7rem 1.2rem;border:1px solid var(--line);border-radius:2px;color:var(--ink)}
+  .btn:hover{border-color:var(--ink);color:var(--ink);background:rgba(255,255,255,.04)}
+  .btn-ghost{border-color:transparent;padding-inline:0}
+  .btn-ghost:hover{background:none;text-decoration:underline;text-underline-offset:5px}
+
+  /* ---- generic section ---- */
+  section{padding-block:clamp(4.5rem,11vh,8rem)}
+  .section-head{max-width:var(--measure);margin-bottom:2.6rem}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,3rem)}
+  .section-head .tag{font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:1rem}
+  .lead{font-size:clamp(1.18rem,1vw + 1rem,1.5rem);color:var(--ink);line-height:1.5;max-width:30ch;font-family:var(--display);font-weight:500;letter-spacing:-.01em}
+
+  /* ---- chapter ---- */
+  .chapter{border-top:1px solid var(--line-soft)}
+  .nameplate{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:.4rem}
+  .nameplate h2{font-size:clamp(2.4rem,6vw,4.4rem);color:var(--accent);font-weight:700}
+  .nameplate .sym{font-family:var(--mono);font-size:.86rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+  .creature{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;color:var(--faint);text-transform:uppercase;margin:0 0 2rem}
+
+  figure{margin:0}
+  .plate{position:relative;background:#000;border-radius:6px;overflow:hidden;border:1px solid var(--line-soft)}
+  .plate::before{content:"";position:absolute;inset:0;z-index:0;
+    background:radial-gradient(70% 70% at 50% 45%,color-mix(in oklab,var(--accent) 26%,transparent),transparent 70%);
+    opacity:.5}
+  .plate img{position:relative;z-index:1;width:100%;aspect-ratio:1/1;object-fit:cover}
+  figcaption{font-family:var(--mono);font-size:.74rem;color:var(--faint);margin-top:.85rem;letter-spacing:.03em}
+
+  .chap-grid{display:grid;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+  @media(min-width:880px){
+    .chap-grid.split{grid-template-columns:1fr 1fr}
+    .chap-grid.split.flip .col-media{order:2}
+  }
+
+  /* data strip */
+  .specs{display:flex;flex-wrap:wrap;gap:0 2.2rem;margin:0 0 1.6rem;padding:1.1rem 0;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-family:var(--mono)}
+  .spec{padding-block:.35rem}
+  .spec dt{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0}
+  .spec dd{margin:.2rem 0 0;font-size:1.05rem;color:var(--ink)}
+  .spec dd b{color:var(--accent);font-weight:700}
+
+  /* full-bleed plate */
+  .bleed{margin-top:2.5rem}
+  .bleed .plate img{aspect-ratio:16/10;object-fit:cover}
+  @media(max-width:620px){.bleed .plate img{aspect-ratio:1/1}}
+
+  /* law figure */
+  .figureframe{background:var(--bg-soft);border:1px solid var(--line-soft);border-radius:6px;padding:clamp(.75rem,2vw,1.5rem);margin-top:1rem}
+  .figureframe img{width:100%;height:auto;aspect-ratio:1650/930;border-radius:3px}
+
+  /* field notes */
+  .notes{display:grid;gap:1.5rem;margin-top:2.5rem}
+  @media(min-width:760px){.notes{grid-template-columns:1fr 1fr}}
+  .note{padding:1.5rem 1.6rem;background:var(--bg-soft);border:1px solid var(--line-soft);border-radius:6px}
+  .note h3{font-size:1.06rem;color:var(--ink);margin:0 0 .6rem;font-family:var(--display);letter-spacing:-.01em}
+  .note p{font-size:.98rem;margin:0;color:var(--body)}
+  .note .lbl{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.7rem}
+
+  .pull{font-family:var(--display);font-weight:500;font-size:clamp(1.5rem,3vw,2.2rem);
+    color:var(--ink);line-height:1.25;letter-spacing:-.015em;max-width:24ch;margin:2.5rem 0;text-wrap:balance}
+  .pull b{color:var(--accent);font-weight:500}
+
+  footer{border-top:1px solid var(--line);padding-block:clamp(3rem,7vh,5rem);color:var(--muted)}
+  .foot-links{display:flex;flex-wrap:wrap;gap:1.4rem;font-family:var(--mono);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1.8rem}
+  .foot-meta{font-family:var(--mono);font-size:.74rem;color:var(--faint);line-height:1.8}
+
+  /* reveal (no-JS shows everything) */
+  .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.replace('no-js','js');</script>
+<a class="skip" href="#prologue">Skip to content</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">The Attractor Atlas</a>
+    <nav class="barnav" aria-label="Sections">
+      <a href="#aurelia">Aurelia</a>
+      <a href="#naiad">Naiad</a>
+      <a href="#cassiopea">Cassiopea</a>
+      <a href="#mobula">Mobula</a>
+      <a href="#law">The Law</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="title">
+    <div class="hero-bg" aria-hidden="true"><img src="img/montage.jpg" alt="" loading="eager" decoding="async"></div>
+    <div class="wrap hero-in">
+      <p class="kicker">A periodic table of strange attractors</p>
+      <h1 id="title">The Attractor Atlas</h1>
+      <p class="lede">Four chaotic flows, each carrying the symmetry of a sea creature, found by an engine that searches for beauty and certified by arithmetic.</p>
+      <p class="meta">Four certified specimens · one symmetry law · discovered June 2026</p>
+      <div class="hero-links">
+        <a class="btn" href="https://sakeeb91.github.io/attractor-atlas/" target="_blank" rel="noopener">Explore them live</a>
+        <a class="btn btn-ghost" href="#prologue">Read the story ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROLOGUE -->
+  <section id="prologue" class="wrap">
+    <div class="prose reveal">
+      <p class="lead" style="--accent:var(--naiad)">A strange attractor is the shape a chaotic system settles into: never repeating, never escaping, folded into infinitely many layers.</p>
+      <p style="margin-top:1.8rem">Most of them are found by accident. This project went looking on purpose. The premise was simple and a little stubborn: pick a symmetry first, then search a whole family of equations for the rare members that are genuinely chaotic, bounded forever, and beautiful enough to keep. Four of them earned names. Each looks, from the right angle, like something that has drifted through the oceans for half a billion years.</p>
+      <p>What follows is the field guide to those four, the machine that hunts them, and the wall that appeared when the search tried to climb from the flat symmetries of the plane to the Platonic solids. The wall turned out to be the most interesting thing in the atlas.</p>
+    </div>
+  </section>
+
+  <!-- AURELIA -->
+  <article id="aurelia" class="chapter" style="--accent:var(--aurelia)">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="nameplate"><h2>Aurelia</h2><span class="sym">C₃ · three-fold rotation</span></div>
+        <p class="creature">Aurelia aurita · the moon jellyfish</p>
+      </div>
+      <div class="chap-grid split">
+        <div class="col-media reveal">
+          <figure class="plate"><img src="img/aurelia.jpg" alt="The Aurelia attractor: a luminous gold bell of nested filaments with three-fold rotational symmetry, on black." loading="lazy" width="1600" height="1600"></figure>
+          <figcaption>Aurelia, three-quarter view. 1,000,000 orbit points.</figcaption>
+        </div>
+        <div class="col-text reveal">
+          <dl class="specs">
+            <div class="spec"><dt>Largest exponent</dt><dd>λ₁ = <b>0.233</b></dd></div>
+            <div class="spec"><dt>Dimension</dt><dd>D_KY ≈ 2.07</dd></div>
+            <div class="spec"><dt>Nearest known</dt><dd>0.184 from Aizawa</dd></div>
+          </dl>
+          <div class="prose">
+            <p>Aurelia was the first. A three-dimensional flow with a quadratic twist in the plane and a cubic clamp on the axis, it spins everything around a single motionless point at its centre, an unstable spiral that pushes orbits outward only to have the nonlinear terms fold them back. That one point holds the whole bell together by pushing everything away.</p>
+            <p>The three-fold symmetry is not decoration. It is built into the equations through a resonant coupling term, the same algebra that governs how three waves exchange energy. Asked for its nearest relative among 135 catalogued systems, the project's own metric answered: the Aizawa attractor, at a distance of 0.184. Out at the rim of shape space, that is what isolation looks like.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- NAIAD -->
+  <article id="naiad" class="chapter" style="--accent:var(--naiad)">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="nameplate"><h2>Naiad</h2><span class="sym">C₂ · two-fold rotation</span></div>
+        <p class="creature">Naiad · the water nymph of springs and fountains</p>
+      </div>
+      <div class="chap-grid split flip">
+        <div class="col-media reveal">
+          <figure class="plate"><img src="img/naiad.jpg" alt="The Naiad attractor: a cyan double-lobed jet with two-fold symmetry, like water arcing from a fountain, on black." loading="lazy" width="1600" height="1600"></figure>
+          <figcaption>Naiad, the fountain. Two lobes exchanged by a half-turn.</figcaption>
+        </div>
+        <div class="col-text reveal">
+          <dl class="specs">
+            <div class="spec"><dt>Largest exponent</dt><dd>λ₁ = <b>0.296</b></dd></div>
+            <div class="spec"><dt>Symmetry</dt><dd>half-turn C₂</dd></div>
+            <div class="spec"><dt>Homoclinic</dt><dd>returns to 7×10⁻⁵</dd></div>
+          </dl>
+          <div class="prose">
+            <p>The quality-diversity engine found Naiad while exploring the two-fold corner of the family. It arcs like water leaving a fountain and falling back, the two halves not mirror images but half-turns of each other.</p>
+            <p>Naiad is the closest the atlas comes to a proof of mechanism. Shooting the unstable manifold out from its central equilibrium and sweeping the rotation rate, the trajectory comes back to within seven hundred-thousandths of where it started, with a ladder of seven near-misses stacked below the canonical parameter. A homoclinic connection, the ingredient Shilnikov's theorem needs to guarantee chaos, almost certainly threads this system.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- CASSIOPEA -->
+  <article id="cassiopea" class="chapter" style="--accent:var(--cassiopea)">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="nameplate"><h2>Cassiopea</h2><span class="sym">C₄ · four-fold rotation</span></div>
+        <p class="creature">Cassiopea · the upside-down jellyfish</p>
+      </div>
+      <div class="chap-grid split">
+        <div class="col-media reveal">
+          <figure class="plate"><img src="img/cassiopea.jpg" alt="The Cassiopea attractor: an emerald four-armed star with four-fold rotational symmetry, on black." loading="lazy" width="1600" height="1600"></figure>
+          <figcaption>Cassiopea, viewed down the axis. A four-armed pinwheel.</figcaption>
+        </div>
+        <div class="col-text reveal">
+          <dl class="specs">
+            <div class="spec"><dt>Largest exponent</dt><dd>λ₁ = <b>0.525</b></dd></div>
+            <div class="spec"><dt>Symmetry</dt><dd>quarter-turn C₄</dd></div>
+            <div class="spec"><dt>Stretches</dt><dd>hardest of the four</dd></div>
+          </dl>
+          <div class="prose">
+            <p>Cassiopea has four arms and the most violent chaos in the family. Its largest Lyapunov exponent, 0.525, is more than double Aurelia's, which is the first crack in an assumption you might have made: that more symmetry should mean more order, that a four-fold system ought to be calmer than a three-fold one. It is not. The chaos does not climb with the order of the symmetry. It wanders.</p>
+            <p>Off its central axis stand four distant saddle points, arranged in a perfect square that the attractor itself never touches. They may organize the boundary of its basin. Nobody has looked yet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- MOBULA -->
+  <article id="mobula" class="chapter" style="--accent:var(--mobula)">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="nameplate"><h2>Mobula</h2><span class="sym">S₄ · rotoreflection</span></div>
+        <p class="creature">Mobula · the devil ray, which breaches and somersaults clear of the water</p>
+      </div>
+      <div class="prose reveal">
+        <p>The first three are pure rotations. Mobula is something rarer: its symmetry is a quarter-turn married to a flip. Rotate it ninety degrees about the vertical axis and turn it upside down, and it lands back on itself, but neither the quarter-turn alone nor the flip alone is a symmetry. That improper operation, called S₄, is exactly the motion of a devil ray breaching and somersaulting clear of the surface, a spin and a flip at once.</p>
+      </div>
+      <div class="bleed reveal">
+        <figure class="plate"><img src="img/mobula.jpg" alt="The Mobula attractor: a violet-rose form of broad pectoral curtains and layered veils, the rotoreflection symmetry of a somersaulting ray, on black." loading="lazy" width="1600" height="1000"></figure>
+        <figcaption>Mobula, three-quarter view. The top half is the bottom half, quarter-turned and inverted.</figcaption>
+      </div>
+      <div class="chap-grid split flip" style="margin-top:3rem">
+        <div class="col-media reveal">
+          <figure class="plate"><img src="img/mobula_alt.jpg" alt="Mobula seen from above: a four-armed pinwheel wound around a central vortex." loading="lazy" width="1280" height="1280"></figure>
+          <figcaption>From above, a four-fold pinwheel around a vortex.</figcaption>
+        </div>
+        <div class="col-text reveal">
+          <dl class="specs">
+            <div class="spec"><dt>Largest exponent</dt><dd>λ₁ = <b>0.330</b></dd></div>
+            <div class="spec"><dt>Dimension</dt><dd>D_KY = 2.27</dd></div>
+            <div class="spec"><dt>Novelty</dt><dd>0.273, beyond Aurelia</dd></div>
+          </dl>
+          <div class="prose">
+            <p>Proving the symmetry is real and not a trick of the eye took a new kind of evidence. The certification measures how far the attractor moves when its symmetry operation is applied to the point cloud: 0.0136 of its own size, against 0.0455 when a plain flip is applied instead. The rotoreflection maps the cloud onto itself more than three times better than the flip does. By the fingerprint ruler, Mobula sits 0.273 from anything known, more novel than Aurelia herself.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- THE WALL -->
+  <section id="wall" class="chapter" style="--accent:var(--law)">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">The polyhedral wall</span>
+        <h2>Then the search tried to climb to the Platonic solids, and hit a wall.</h2>
+      </div>
+      <div class="prose reveal">
+        <p>The plan was to keep going: a strange attractor with the symmetry of a tetrahedron, then an octahedron, then the intended centrepiece of the whole project, an icosahedron, sixty rotations deep, the symmetry of a virus shell and a radiolarian's glass skeleton. The equivariant families were built. A test proved each one carried exactly the right symmetry, to machine precision, including an icosahedral invariant assembled by hand from all sixty rotation matrices. Then the search for chaos was switched on, and nothing came back. Not nothing beautiful. Nothing at all.</p>
+        <p>The reason is a wall, and it had been hiding in the project's own one-line caution. The cyclic and rotoreflection groups act on space <em>reducibly</em>: they spin a plane and leave a height axis alone. That split is what makes the four jellyfish work. It gives them a contraction-and-rotation engine in the plane and a fold along the axis. The Platonic groups act <em>irreducibly</em>. There is no plane they preserve, no axis they leave alone. A theorem of Schur then says that anything linear which commutes with the symmetry must be a single number in every direction, a balloon. The engine that made the jellyfish chaotic is, for the polyhedra, mathematically forbidden.</p>
+      </div>
+      <p class="pull reveal">Near the centre, the only place a symmetric attractor could live, every direction simply expands at one rate. <b>The symmetric place is the calm place.</b></p>
+      <div class="prose reveal">
+        <p>An exhaustive search confirmed it the hard way. Across roughly a hundred thousand parameter sets, in polynomial families and trigonometric ones, every bounded orbit relaxed to a fixed point or a closed loop. The chaos that did appear was a mirage: at a coarse integration step a candidate would report a healthy positive Lyapunov exponent, and halving the step would collapse it to a stable equilibrium. Every apparent hit reversed sign as the arithmetic got finer. What the polyhedral groups will host is the rung just below chaos: equilibria and symmetric limit cycles, which can carry all sixty rotations. Chaos cannot. This is, almost certainly, why the literature has chaotic <em>maps</em> with polyhedral symmetry and no chaotic <em>flows</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE LAW -->
+  <section id="law" class="chapter" style="--accent:var(--law)">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">The law of the cliff</span>
+        <h2>Give every symmetry the same search budget and the wall becomes a measurement.</h2>
+      </div>
+      <div class="prose reveal" style="margin-bottom:2rem">
+        <p>The same engine ran against eleven symmetry groups under one rule: identical settings, identical number of candidate flows, and the same fine-step re-certification that catches the integration mirages. For each group, record only the strongest chaos that survives. Plotted against the group, the result is not a trend. It is a cliff.</p>
+      </div>
+      <figure class="figureframe reveal">
+        <img src="img/symmetry_law_dark.png" alt="Bar chart of maximum certified largest Lyapunov exponent per symmetry group. Cyan cyclic groups and the magenta rotoreflection group range from 0.18 to 0.63 with a non-monotonic shape. The red polyhedral groups T, O, and I sit at essentially zero, marked the irreducibility cliff." loading="lazy">
+        <figcaption>Max certified λ₁ under equal budget. Reducible-action groups host chaos non-monotonically; the irreducible polyhedral groups fall to the floor.</figcaption>
+      </figure>
+      <div class="prose reveal" style="margin-top:2.2rem">
+        <p>Two regimes, split by a sharp boundary. The reducible groups, the cyclic family and the rotoreflection, host chaos with a strength that wanders between 0.18 and 0.63 and refuses to march in step with the order of the symmetry. The irreducible polyhedral groups sit at the floor. The amount of chaos a symmetry will permit depends less on how much symmetry there is than on what kind it is. The wandering line and the cliff are the same finding, seen twice.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAKING OF -->
+  <section id="making" class="chapter" style="--accent:var(--naiad)">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">Under the hood</span>
+        <h2>How the atlas was actually made, including the parts that nearly went wrong.</h2>
+      </div>
+      <div class="notes">
+        <div class="note reveal">
+          <span class="lbl">The engine</span>
+          <h3>A search that prizes novelty</h3>
+          <p>Specimens are found by quality-diversity search over an equivariant family: thousands of candidate flows per generation, each integrated, tested for bounded chaos, then fingerprinted. Novelty is scored as the distance from a candidate's shape to its nearest neighbour among 135 catalogued systems, so the engine is rewarded for finding things genuinely unlike what is known, not merely things that are chaotic.</p>
+        </div>
+        <div class="note reveal">
+          <span class="lbl">Certification</span>
+          <h3>Papers in order before a name</h3>
+          <p>Nothing is named until it passes the full battery: a long Lyapunov spectrum by the tangent-space method, a Kaplan-Yorke dimension, boundedness over four million steps, robustness across scattered initial conditions, and a symmetry residual that measures how exactly the cloud maps onto itself. Every number on this page comes from a script in the repository.</p>
+        </div>
+        <div class="note reveal">
+          <span class="lbl">The mirage</span>
+          <h3>Chaos that was an arithmetic error</h3>
+          <p>The hardest hurdle was a false positive. The fast batch estimator, run at a coarse time step, manufactured chaos around stable equilibria: a candidate reading a positive exponent of 0.4 would collapse to minus 20, a fixed point, once the step size was halved. The fix was a rule, now baked in: trust no exponent until it survives a finer step. It is what let the project tell a real attractor from a numerical ghost.</p>
+        </div>
+        <div class="note reveal">
+          <span class="lbl">The icosahedron</span>
+          <h3>An invariant built from sixty matrices</h3>
+          <p>The icosahedral group has no simple low-degree invariant to push the flow with. The lowest one sits at degree six, the same fact behind the soccer-ball symmetry of C₆₀. Rather than look it up, the project built it numerically: take a generic direction, sweep it through all sixty rotations, and sum the sixth powers. The result is icosahedrally symmetric by construction, and verified so against the whole group.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav class="foot-links" aria-label="Links">
+      <a href="https://sakeeb91.github.io/attractor-atlas/" target="_blank" rel="noopener">Live viewer</a>
+      <a href="https://github.com/Sakeeb91/attractor-atlas" target="_blank" rel="noopener">Source code</a>
+      <a href="https://github.com/Sakeeb91/attractor-atlas/blob/main/STORY.md" target="_blank" rel="noopener">The full story</a>
+      <a href="https://sakeeb91.github.io/" rel="noopener">More projects</a>
+    </nav>
+    <p class="foot-meta">
+      Four certified strange attractors, one symmetry law, and one obstruction. Aurelia (C₃), Naiad (C₂), Cassiopea (C₄), Mobula (S₄).<br>
+      Equations, certifications, and renders generated by the code in the attractor-atlas repository. Rendered June 2026.
+    </p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if (reduce || !('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
