@@ -148,11 +148,10 @@
   .spec dd{margin:.2rem 0 0;font-size:1.05rem;color:var(--ink)}
   .spec dd b{color:var(--accent);font-weight:700}
 
-  /* full-bleed plate */
+  /* full-bleed plate (currently unused; kept for future wide figures) */
   .bleed{margin-top:2.5rem}
   .bleed .plate img{aspect-ratio:16/10;object-fit:cover}
-  .bleed .plate video.orbit{aspect-ratio:16/10;object-fit:contain}
-  @media(max-width:620px){.bleed .plate img,.bleed .plate video.orbit{aspect-ratio:1/1}}
+  @media(max-width:620px){.bleed .plate img{aspect-ratio:1/1}}
 
   /* law figure */
   .figureframe{background:var(--bg-soft);border:1px solid var(--line-soft);border-radius:6px;padding:clamp(.75rem,2vw,1.5rem);margin-top:1rem}
@@ -328,23 +327,16 @@
         <div class="nameplate"><h2>Mobula</h2><span class="sym">S₄ · rotoreflection</span></div>
         <p class="creature">Mobula · the devil ray, which breaches and somersaults clear of the water</p>
       </div>
-      <div class="prose reveal">
-        <p>The first three are pure rotations. Mobula is something rarer: its symmetry is a quarter-turn married to a flip. Rotate it ninety degrees about the vertical axis and turn it upside down, and it lands back on itself, but neither the quarter-turn alone nor the flip alone is a symmetry. That improper operation, called S₄, is exactly the motion of a devil ray breaching and somersaulting clear of the surface, a spin and a flip at once.</p>
-      </div>
-      <div class="bleed reveal">
-        <figure class="plate">
-          <video class="orbit" poster="img/mobula.jpg" muted loop playsinline preload="none" width="600" height="600" aria-label="The Mobula attractor rotating through one full turn: a violet-rose form of broad pectoral curtains and layered veils, the rotoreflection symmetry of a somersaulting ray, on black.">
-            <source data-src="vid/mobula_orbit.webm" type="video/webm">
-            <source data-src="vid/mobula_orbit.mp4" type="video/mp4">
-          </video>
-          <span class="spin" aria-hidden="true">rotating</span>
-        </figure>
-        <figcaption>Mobula, one full turn. The top half is the bottom half, quarter-turned and inverted; the spin and the flip, made visible.</figcaption>
-      </div>
-      <div class="chap-grid split flip" style="margin-top:3rem">
+      <div class="chap-grid split flip">
         <div class="col-media reveal">
-          <figure class="plate"><img src="img/mobula_alt.jpg" alt="Mobula seen from above: a four-armed pinwheel wound around a central vortex." loading="lazy" width="1280" height="1280"></figure>
-          <figcaption>From above, a four-fold pinwheel around a vortex.</figcaption>
+          <figure class="plate">
+            <video class="orbit" poster="img/mobula.jpg" muted loop playsinline preload="none" width="600" height="600" aria-label="The Mobula attractor rotating through one full turn: a violet-rose rotoreflection form of broad pectoral curtains and layered veils, on black.">
+              <source data-src="vid/mobula_orbit.webm" type="video/webm">
+              <source data-src="vid/mobula_orbit.mp4" type="video/mp4">
+            </video>
+            <span class="spin" aria-hidden="true">rotating</span>
+          </figure>
+          <figcaption>Mobula, one full turn. The spin and the flip, made visible.</figcaption>
         </div>
         <div class="col-text reveal">
           <dl class="specs">
@@ -353,6 +345,7 @@
             <div class="spec"><dt>Novelty</dt><dd>0.273, beyond Aurelia</dd></div>
           </dl>
           <div class="prose">
+            <p>The first three are pure rotations. Mobula is rarer: its symmetry is a quarter-turn married to a flip. Rotate it ninety degrees about the vertical axis and turn it upside down, and it lands back on itself, but neither the quarter-turn alone nor the flip alone is a symmetry. That improper operation, called S₄, is the motion of a devil ray breaching and somersaulting clear of the surface, a spin and a flip at once.</p>
             <p>Proving the symmetry is real and not a trick of the eye took a new kind of evidence. The certification measures how far the attractor moves when its symmetry operation is applied to the point cloud: 0.0136 of its own size, against 0.0455 when a plain flip is applied instead. The rotoreflection maps the cloud onto itself more than three times better than the flip does. By the fingerprint ruler, Mobula sits 0.273 from anything known, more novel than Aurelia herself.</p>
           </div>
         </div>
